@@ -1,0 +1,5 @@
+TODO:
+setup.py: pandas, progress, ipymol
+brew: wget, pymol, ffmpeg
+brew cask: xquartz
+ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/scntool /usr/local/bin/scntool
