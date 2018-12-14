@@ -18,13 +18,13 @@
 		1993DB61207C0155009BC97E /* AllergenIconCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1993DB60207C0155009BC97E /* AllergenIconCollectionViewController.swift */; };
 		199CB8CB1F95179800EF1B7C /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199CB8CA1F95179800EF1B7C /* DatabaseHelper.swift */; };
 		19B1A31A20B43EB7001F7067 /* ARSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1A31920B43EB7001F7067 /* ARSceneViewController.swift */; };
-		19BD92BC20B597C700584F62 /* Allergens.db in Resources */ = {isa = PBXBuildFile; fileRef = 19BD92BB20B5977400584F62 /* Allergens.db */; };
 		19CFC7CE1F94098C00D2D741 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CFC7CD1F94098C00D2D741 /* libsqlite3.tbd */; };
 		19D7F5E61F7AA87500EF140E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7F5E51F7AA87500EF140E /* AppDelegate.swift */; };
 		19D7F5E81F7AA87500EF140E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7F5E71F7AA87500EF140E /* MainViewController.swift */; };
 		19D7F5F01F7AA87500EF140E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D7F5EF1F7AA87500EF140E /* Assets.xcassets */; };
 		19D7F5FE1F7AA87500EF140E /* MastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7F5FD1F7AA87500EF140E /* MastTests.swift */; };
 		19D7F6091F7AA87500EF140E /* MastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7F6081F7AA87500EF140E /* MastUITests.swift */; };
+		560E05DF21C345C700DE7CBB /* Allergens.db in Resources */ = {isa = PBXBuildFile; fileRef = 560E05DE21C345C700DE7CBB /* Allergens.db */; };
 		5676287E21C1DD6E00EC50DD /* AWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5676287D21C1DD6E00EC50DD /* AWSHelper.swift */; };
 		56762A3321C2A6B100EC50DD /* n3smh.scn in Resources */ = {isa = PBXBuildFile; fileRef = 567629C821C2A6AF00EC50DD /* n3smh.scn */; };
 		56762A3421C2A6B100EC50DD /* n1aqz.scn in Resources */ = {isa = PBXBuildFile; fileRef = 567629C921C2A6AF00EC50DD /* n1aqz.scn */; };
@@ -340,7 +340,6 @@
 		1993DB60207C0155009BC97E /* AllergenIconCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenIconCollectionViewController.swift; sourceTree = "<group>"; };
 		199CB8CA1F95179800EF1B7C /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		19B1A31920B43EB7001F7067 /* ARSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneViewController.swift; sourceTree = "<group>"; };
-		19BD92BB20B5977400584F62 /* Allergens.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = Allergens.db; path = "../../Mast-assets/database/Allergens.db"; sourceTree = "<group>"; };
 		19CFC7CD1F94098C00D2D741 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		19CFC8011F94328D00D2D741 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		19D7F5E21F7AA87400EF140E /* Mast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +354,7 @@
 		19D7F6081F7AA87500EF140E /* MastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastUITests.swift; sourceTree = "<group>"; };
 		19D7F60A1F7AA87500EF140E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DA7B5FC3CDD324C8F368683 /* Pods-Mast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mast/Pods-Mast.debug.xcconfig"; sourceTree = "<group>"; };
+		560E05DE21C345C700DE7CBB /* Allergens.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = Allergens.db; path = ../../assets/database/Allergens.db; sourceTree = "<group>"; };
 		5676287D21C1DD6E00EC50DD /* AWSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSHelper.swift; sourceTree = "<group>"; };
 		5676288221C29C3800EC50DD /* AWSS3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AWSS3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5676295B21C2A4DA00EC50DD /* n4odd.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = n4odd.mp4; sourceTree = "<group>"; };
@@ -572,7 +572,6 @@
 		56762A3121C2A6B100EC50DD /* n3mq1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = n3mq1.scn; sourceTree = "<group>"; };
 		56762A3221C2A6B100EC50DD /* n2lpx.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = n2lpx.scn; sourceTree = "<group>"; };
 		56A8D75321C3196A0003C1EE /* not_found.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = not_found.mp4; sourceTree = "<group>"; };
-		56FBE3EA219EF41E00218824 /* Allergens.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Allergens.db; sourceTree = "<group>"; };
 		70ECA6AFDF2E03094CE5B743 /* Pods-MastUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MastUITests/Pods-MastUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9229599CE2021408BC3CED5F /* Pods-MastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MastUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MastUITests/Pods-MastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBF811DDA772DA17D38D7482 /* Pods-Mast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mast/Pods-Mast.release.xcconfig"; sourceTree = "<group>"; };
@@ -665,7 +664,7 @@
 		19D7F5E41F7AA87500EF140E /* Mast */ = {
 			isa = PBXGroup;
 			children = (
-				56FBE3EA219EF41E00218824 /* Allergens.db */,
+				560E05DE21C345C700DE7CBB /* Allergens.db */,
 				1913054D1FB9DEBA009BAEA7 /* LaunchScreen.storyboard */,
 				1913054E1FB9DEBB009BAEA7 /* Main.storyboard */,
 				1993DB60207C0155009BC97E /* AllergenIconCollectionViewController.swift */,
@@ -678,7 +677,6 @@
 				19D7F5E51F7AA87500EF140E /* AppDelegate.swift */,
 				199CB8CA1F95179800EF1B7C /* DatabaseHelper.swift */,
 				19131A951F93D22B00621BF4 /* Allergen.swift */,
-				19BD92BB20B5977400584F62 /* Allergens.db */,
 				5676287D21C1DD6E00EC50DD /* AWSHelper.swift */,
 				19D7F5EF1F7AA87500EF140E /* Assets.xcassets */,
 				567629C721C2A6A200EC50DD /* 3D Objects */,
@@ -1247,8 +1245,8 @@
 				56762A5921C2A6B100EC50DD /* n3f5v.scn in Resources */,
 				56762A8221C2A6B100EC50DD /* n1n10.scn in Resources */,
 				56762A4B21C2A6B100EC50DD /* n2flh.scn in Resources */,
-				19BD92BC20B597C700584F62 /* Allergens.db in Resources */,
 				56762A4321C2A6B100EC50DD /* n4q5r.scn in Resources */,
+				560E05DF21C345C700DE7CBB /* Allergens.db in Resources */,
 				56762A9221C2A6B100EC50DD /* n2mlt.scn in Resources */,
 				56762A3B21C2A6B100EC50DD /* n6taa.scn in Resources */,
 				56762A4A21C2A6B100EC50DD /* n4cpv.scn in Resources */,
