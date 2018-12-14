@@ -1,5 +1,6 @@
 #Must import
 *.3gp
+*.mp4
 
 # Built application files
 *.apk
