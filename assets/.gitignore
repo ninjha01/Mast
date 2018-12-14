@@ -4,6 +4,7 @@
 *.3gp
 *.mp4
 *.dae
+*.scn
 *.png
 html/
 venv/
