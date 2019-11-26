@@ -16,7 +16,6 @@ public class ImageAdapter extends BaseAdapter {
     private String[] buttonLabels;
 
 
-
     public ImageAdapter(Context context, String[] buttonLabels) {
         this.context = context;
         this.buttonLabels = buttonLabels;
@@ -24,32 +23,31 @@ public class ImageAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        Log.i("getView called", String.valueOf(position));
+
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View gridView;
 
-        if (convertView == null) {
 
-            gridView = inflater.inflate(R.layout.button_layout, null);
-            TextView buttonLabel = (TextView) gridView.findViewById(R.id.buttonLabel);
-            String title = buttonLabels[position];
-            buttonLabel.setText(title);
+        gridView = inflater.inflate(R.layout.button_layout, null);
+        TextView buttonLabel = (TextView) gridView.findViewById(R.id.buttonLabel);
+        String title = buttonLabels[position];
+        buttonLabel.setText(title);
 
-            ImageView buttonImageView = (ImageView) gridView.findViewById(R.id.buttonImage);
-            if(title.isEmpty())
-                buttonImageView.setClickable(false);
+        ImageView buttonImageView = (ImageView) gridView.findViewById(R.id.buttonImage);
+        if (title.isEmpty())
+            buttonImageView.setClickable(false);
 
-            Integer[] imageIDs = new Integer[] { R.drawable.icon_animal, R.drawable.icon_cockroach, R.drawable.icon_dust_mite,
-                    R.drawable.icon_food, R.drawable.icon_mold, R.drawable.icon_pollen, R.drawable.icon_venom, R.drawable.icon_other, R.drawable.icon_latex};
-            buttonImageView.setImageResource(imageIDs[position]);
-            // Image should be cropped towards the center
-            buttonImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            buttonImageView.setPadding(8, 8, 8, 8);
-            buttonImageView.setCropToPadding(true);
-        } else {
-            gridView = convertView;
-        }
+        Integer[] imageIDs = new Integer[]{R.drawable.icon_animal, R.drawable.icon_cockroach, R.drawable.icon_dust_mite,
+                R.drawable.icon_food, R.drawable.icon_mold, R.drawable.icon_pollen, R.drawable.icon_venom, R.drawable.icon_other, R.drawable.icon_latex};
+        Log.i("Setting imageID", String.valueOf(position));
+        buttonImageView.setImageResource(imageIDs[position]);
+        // Image should be cropped towards the center
+        buttonImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        buttonImageView.setPadding(8, 8, 8, 8);
+        buttonImageView.setCropToPadding(true);
 
         return gridView;
     }
@@ -66,6 +64,6 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 }

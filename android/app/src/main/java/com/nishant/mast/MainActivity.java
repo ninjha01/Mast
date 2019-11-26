@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     GridView gridView;
 
     final String[] buttonLabels = new String[]{"Animal", "Cockroach", "Dust Mite",
-            "Food", "Mold", "Pollen", "Venom", "Other", "Latex"}; //Contains "" padding to match imageResources
+            "Food", "Mold", "Pollen", "Venom", "Other", "Latex"}; 
 
 
     @Override
@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String query = buttonLabels[position];
+        Log.d("Clicked", buttonLabels[position]);
         searchView.setQuery(query, true);
     }
 

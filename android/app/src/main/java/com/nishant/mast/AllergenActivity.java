@@ -21,6 +21,7 @@ import android.widget.VideoView;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
+import java.net.URI;
 import java.util.Arrays;
 
 /**
@@ -144,16 +145,8 @@ public class AllergenActivity extends AppCompatActivity {
     }
 
     private void loadVideo(String filename) {
-        //Get file
-        Log.i("video filename: ", filename);
-        int rawId = getResources().getIdentifier(filename, "raw", getPackageName());
-        String path = "android.resource://" + getPackageName() + "/" + rawId;
-        File file = new File(path);
-        if (!file.exists()); {
-            Log.i("File doesn't exist: ", path);
-        }
-        //Set up Video player
-        videoView.setVideoURI(Uri.parse(path));
+        Uri videoURI = Uri.parse("android.resource://com.nishant.mast/raw/" + filename.substring(0, filename.lastIndexOf('.')));
+        videoView.setVideoURI(videoURI);
         videoView.start();
         //Set to loop
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
