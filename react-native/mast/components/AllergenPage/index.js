@@ -7,7 +7,7 @@ export default class SearchPage extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.title}>Allergen Page </Text>
+        <Text style={styles.title}>Allergen Page</Text>
       </View>
     );
   }
