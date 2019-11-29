@@ -4,9 +4,11 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
 import SearchPage from "./SearchPage.js";
+import AllergenPage from "./AllergenPage.js";
 
 const AppNavigator = createStackNavigator({
-  Search: SearchPage
+  Search: SearchPage,
+  Allergen: AllergenPage
 });
 
 const AppContainer = createAppContainer(AppNavigator);
