@@ -1,9 +1,9 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-export default class SearchPage extends Component {
+export default class AllergenPage extends Component {
   render() {
     return (
       <View>
@@ -20,6 +20,3 @@ const styles = StyleSheet.create({
     marginTop: 65,
   },
 });
-
-
-
