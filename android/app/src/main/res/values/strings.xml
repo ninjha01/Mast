@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Allergen Guru</string>
-    <string name="hint">Search Allergens</string>
-    <string name="allergen_search">Allergen Search</string>
-    <string name="no_results_found">No results found.</string>
-</resources>
