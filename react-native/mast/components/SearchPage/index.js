@@ -1,19 +1,6 @@
 // Firebase ----
-import * as firebase from "firebase/app";
-import "firebase/database";
+import firestore from '@react-native-firebase/firestore';
 
-const config = {
-  apiKey: ***REMOVED***,
-  authDomain: "mast-b0959.firebaseapp.com",
-  databaseURL: "https://mast-b0959.firebaseio.com",
-  projectId: "mast-b0959",
-  storageBucket: "mast-b0959.appspot.com",
-  messagingSenderId: "318389768634",
-  appId: "1:318389768634:web:dd148c8466f591dd0a4d83"
-};
-firebase.initializeApp(config);
-var database = firebase.database()
-var ref = database.ref()
 
 // Firebase ----
 'use strict';
@@ -34,7 +21,7 @@ export default class SearchPage extends Component {
   
   componentDidMount() {
     this.setState({ loading: true });
-    const aref = ref.child('allergens').orderByChild('category').equalTo('Venom');
+    const aref = firestore().collection('allergens');
     aref.on('value', snapshot => {
       console.log("snapshot", snapshot)
       const allergens = Object.values(snapshot.val());
