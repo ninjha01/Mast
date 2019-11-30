@@ -6,10 +6,6 @@
 *.dae
 *.scn
 *.png
-database.csv
-database.json
-html/
-assets/
 
 #Temp files
 __pycache__/

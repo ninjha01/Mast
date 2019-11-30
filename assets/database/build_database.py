@@ -7,22 +7,54 @@ from multiprocessing import Pool
 import multiprocessing as mp
 import time
 
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+cred = credentials.Certificate("./firebase_admin_key.json")
+firebase_admin.initialize_app(cred)
+
 
 def main():
     start = time.time()
+    print("Generating database....")
+    data = generate_database(num_allergens=150)
+    elapsed = round(time.time() - start)
+    print(f"Database Generated in {elapsed} seconds.")
+
+    start = time.time()
+    db_filename = "data.json"
+    print(f"Writing to {db_filename}...")
+    write_database(data, db_filename)
+    elapsed = round(time.time() - start)
+    print(f"Database Written in {elapsed} seconds.")
+
+    start = time.time()
+    print("Uploading to Firestore...")
+    upload_to_firebase(data["allergens"], "allergens")
+    elapsed = round(time.time() - start)
+    print(f"Uploaded to Firestore in {elapsed} seconds.")
+
+
+def generate_database(num_allergens):
     core_count = mp.cpu_count()
     pool = Pool(processes=core_count)
-    queue = [x for x in range(1, 1500)]
-    print("Generating database...")
+    queue = [x for x in range(1, num_allergens)]
     pool_outputs = pool.map(parse_allergen, queue)
-    dataset = {"allergens": [x for x in pool_outputs if x is not None]}
     # filter out unmapped a_ids
-    db_filename = "data.json"
-    print(f"Writing to {db_filename}")
+    data = {"allergens": [x for x in pool_outputs if x is not None]}
+    return data
+
+
+def write_database(data, db_filename):
     with open(db_filename, "w") as json_file:
-        json.dump(dataset, json_file)
-    elapsed = round(time.time() - start)
-    print(f"Database Generated in {elapsed} seconds")
+        json.dump(data, json_file)
+
+
+def upload_to_firebase(dataset, collection_name):
+    store = firestore.client()
+    for d in dataset:
+        store.collection(collection_name).document(d["name"]).set(d)
+        print(f'{d["name"]} uploaded')
 
 
 def parse_allergen(a_id):
@@ -36,6 +68,8 @@ def parse_allergen(a_id):
         }
         entry.update(metadata)
         print(f'a_id: {a_id}, name: {entry["name"]} completed')
+    else:
+        print(f"a_id: {a_id}, no allergen found")
     return entry
 
 
