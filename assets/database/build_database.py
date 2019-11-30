@@ -32,7 +32,7 @@ def main():
 
 def generate_database(num_allergens):
     core_count = mp.cpu_count()
-    pool = Pool(processes=core_count)
+    pool = Pool(processes=core_count - 1)
     queue = [x for x in range(1, num_allergens)]
     pool_outputs = pool.map(parse_allergen, queue)
     # filter out unmapped a_ids
