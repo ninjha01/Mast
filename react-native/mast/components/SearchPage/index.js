@@ -1,20 +1,12 @@
 // Firebase ----
-import * as firebase from "firebase/app";
-import "firebase/database";
-
-const config = {
-  apiKey: ***REMOVED***,
-  authDomain: "mast-b0959.firebaseapp.com",
-  databaseURL: "https://mast-b0959.firebaseio.com",
-  projectId: "mast-b0959",
-  storageBucket: "mast-b0959.appspot.com",
-  messagingSenderId: "318389768634",
-  appId: "1:318389768634:web:dd148c8466f591dd0a4d83"
-};
-firebase.initializeApp(config);
-var database = firebase.database()
-var ref = database.ref()
-
+import firestore from '@react-native-firebase/firestore';
+firebase.auth()
+	.signInAnonymously()
+	.then(credential => {
+	  if (credential) {
+	    console.log('default app user ->', credential.user.toJSON());
+	  }
+	});
 // Firebase ----
 'use strict';
 
@@ -34,7 +26,7 @@ export default class SearchPage extends Component {
   
   componentDidMount() {
     this.setState({ loading: true });
-    const aref = ref.child('allergens').orderByChild('category').equalTo('Venom');
+    const ref = firestore().collection("allergens");
     aref.on('value', snapshot => {
       console.log("snapshot", snapshot)
       const allergens = Object.values(snapshot.val());
@@ -62,10 +54,10 @@ export default class SearchPage extends Component {
     console.log("rendered allergens", allergens)
     if (allergens.length > 0) {
       var allergenList = <FlatList
-			   style={styles.container}
-			   data={allergens}
-			   keyExtractor={(item) => item.name}
-			   renderItem={({ item }) => <Text styles={styles.item}>{item.name}</Text>}
+      style={styles.container}
+      data={allergens}
+      keyExtractor={(item) => item.name}
+      renderItem={({ item }) => <Text styles={styles.item}>{item.name}</Text>}
       />
     }
     else {
