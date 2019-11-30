@@ -6,18 +6,13 @@ from bs4 import BeautifulSoup as bs
 from multiprocessing import Pool
 import multiprocessing as mp
 import time
-
-import firebase_admin
-from firebase_admin import credentials, firestore
-
-cred = credentials.Certificate("./firebase_admin_key.json")
-firebase_admin.initialize_app(cred)
+from firebase import firestore
 
 
 def main():
     start = time.time()
     print("Generating database....")
-    data = generate_database(num_allergens=150)
+    data = generate_database(num_allergens=10)
     elapsed = round(time.time() - start)
     print(f"Database Generated in {elapsed} seconds.")
 

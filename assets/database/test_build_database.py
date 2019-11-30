@@ -1,7 +1,6 @@
 from build_database import parse_allergen_page, get_metadata_from_csv
-import firebase_admin
-from firebase_admin import credentials, firestore
 import uuid
+from firebase import firestore
 
 
 def test_parse_allergen_page():
@@ -33,8 +32,6 @@ def test_get_metadata_from_csv():
 
 
 def test_write_firestore():
-    cred = credentials.Certificate("./firebase_admin_key.json")
-    firebase_admin.initialize_app(credential=cred)
     store = firestore.client()
     rand_id = str(uuid.uuid4())
     rand_val = {"test_val": str(uuid.uuid4())}
