@@ -12,7 +12,7 @@ from firebase import firestore
 def main():
     start = time.time()
     print("Generating database....")
-    data = generate_database(num_allergens=10)
+    data = generate_database(num_allergens=1500)
     elapsed = round(time.time() - start)
     print(f"Database Generated in {elapsed} seconds.")
 
