@@ -15,7 +15,8 @@ def main():
     queue = [x for x in range(1, 1500)]
     print("Generating database...")
     pool_outputs = pool.map(parse_allergen, queue)
-    dataset = [x for x in pool_outputs if x is not None]  # filter out unmapped a_ids
+    dataset = {"allergens": [x for x in pool_outputs if x is not None]}
+    # filter out unmapped a_ids
     db_filename = "data.json"
     print(f"Writing to {db_filename}")
     with open(db_filename, "w") as json_file:
