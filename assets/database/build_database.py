@@ -1,3 +1,4 @@
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
 
@@ -27,6 +28,17 @@ def parse_allergen_page(url):
         "allergenicity_ref": a_ref_tag.get_text(),
         "route": route_tag.get_text(),
     }
+
+
+def get_metadata_from_csv(allergen_name, filename):
+    d = pd.read_csv(filename, header=None, index_col=0, squeeze=True).to_dict()
+    prefix = " ".join((allergen_name.split()[:2]))
+    if allergen_name in d:
+        return d[allergen_name]
+    elif prefix in d:  # Covers prefix style metadata a la categories.csv
+        return d[prefix]
+    else:
+        return None
 
 
 base_url = "http://www.allergen.org/viewallergen.php?aid=" + str(1)

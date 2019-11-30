@@ -1,4 +1,4 @@
-from build_database import parse_allergen_page
+from build_database import parse_allergen_page, get_metadata_from_csv
 
 
 def test_parse_allergen_page():
@@ -16,3 +16,14 @@ def test_parse_allergen_page():
         "route": "Airway",
     }
     assert parsed == expected
+
+
+def test_get_metadata_from_csv():
+    name = "Der p 10"
+    sold_filename = "sold.csv"
+    assert get_metadata_from_csv(name, sold_filename) is True
+    categories_filename = "categories.csv"
+    assert get_metadata_from_csv(name, categories_filename) == "House Dust Mite"
+    name = "Mala s 13"
+    pdbs_filename = "pdbs.csv"
+    assert get_metadata_from_csv(name, pdbs_filename) == "2j23"
