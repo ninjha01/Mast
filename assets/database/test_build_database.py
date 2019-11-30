@@ -1,4 +1,7 @@
 from build_database import parse_allergen_page, get_metadata_from_csv
+import firebase_admin
+from firebase_admin import credentials, firestore
+import uuid
 
 
 def test_parse_allergen_page():
@@ -27,3 +30,14 @@ def test_get_metadata_from_csv():
     name = "Mala s 13"
     pdbs_filename = "pdbs.csv"
     assert get_metadata_from_csv(name, pdbs_filename) == "2j23"
+
+
+def test_write_firestore():
+    cred = credentials.Certificate("./firebase_admin_key.json")
+    firebase_admin.initialize_app(credential=cred)
+    store = firestore.client()
+    rand_id = str(uuid.uuid4())
+    rand_val = {"test_val": str(uuid.uuid4())}
+    rand_doc = store.collection("test").document(rand_id)
+    rand_doc.set(rand_val)
+    assert rand_doc.get().to_dict() == rand_val
