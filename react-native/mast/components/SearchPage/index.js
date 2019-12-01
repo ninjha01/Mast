@@ -1,6 +1,6 @@
 // Firebase ----
-import * as firebase from "firebase/app";
-import "firebase/database";
+import firebase from '@react-native-firebase/app';
+import firestore from '@react-native-firebase/firestore';
 
 const config = {
   apiKey: ***REMOVED***,
@@ -11,10 +11,8 @@ const config = {
   messagingSenderId: "318389768634",
   appId: "1:318389768634:web:dd148c8466f591dd0a4d83"
 };
-firebase.initializeApp(config);
-var database = firebase.database()
-var ref = database.ref()
 
+firebase.initializeApp(config);
 // Firebase ----
 'use strict';
 
@@ -34,17 +32,15 @@ export default class SearchPage extends Component {
   
   componentDidMount() {
     this.setState({ loading: true });
-    const aref = ref.child('allergens').orderByChild('category').equalTo('Venom');
-    aref.on('value', snapshot => {
-      console.log("snapshot", snapshot)
-      const allergens = Object.values(snapshot.val());
-      console.log("snapshot val", snapshot)
-
-      this.setState({
-	allergens: allergens,
-	loading: false,
-      });
-    });
+    firebase.firestore().collection("allergens")
+	    .get()
+            .then((querySnapshot) => { 
+	      const allergens = querySnapshot.docs.map(doc => ({...doc.data()}))
+	      this.setState({
+		allergens: allergens,
+		loading: false,
+	      });
+            });    
   }
 
   render() {
