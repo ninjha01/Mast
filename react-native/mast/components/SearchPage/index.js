@@ -9,7 +9,8 @@ const config = {
   projectId: "mast-b0959",
   storageBucket: "mast-b0959.appspot.com",
   messagingSenderId: "318389768634",
-  appId: "1:318389768634:web:dd148c8466f591dd0a4d83"
+  appId: "1:318389768634:web:dd148c8466f591dd0a4d83",
+  cacheSizeBytes: firestore.CACHE_SIZE_UNLIMITED, // unlimited cache size
 };
 
 firebase.initializeApp(config);
