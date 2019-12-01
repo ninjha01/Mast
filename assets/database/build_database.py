@@ -50,6 +50,10 @@ def upload_to_firebase(dataset, collection_name):
     for d in dataset:
         store.collection(collection_name).document(d["name"]).set(d)
         print(f'{d["name"]} uploaded')
+    version_number = store.collection(collection_name).document("version").get()
+    version_number = version_number.to_dict()["value"] + 1
+    store.collection(collection_name).document("version").set({"value": version_number})
+    print(f"Version {version_number}")
 
 
 def parse_allergen(a_id):
