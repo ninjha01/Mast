@@ -30,18 +30,18 @@ export default class SearchPage extends Component {
     }
   }
 
-  
+
   componentDidMount() {
     this.setState({ loading: true });
     firebase.firestore().collection("allergens")
-	    .get()
-            .then((querySnapshot) => { 
-	      const allergens = querySnapshot.docs.map(doc => ({...doc.data()}))
-	      this.setState({
-		allergens: allergens,
-		loading: false,
-	      });
-            });    
+      .get()
+      .then((querySnapshot) => {
+        const allergens = querySnapshot.docs.map(doc => ({ ...doc.data() }))
+        this.setState({
+          allergens: allergens,
+          loading: false,
+        });
+      });
   }
 
   render() {
@@ -59,10 +59,12 @@ export default class SearchPage extends Component {
     console.log("rendered allergens", allergens)
     if (allergens.length > 0) {
       var allergenList = <FlatList
-			   style={styles.container}
-			   data={allergens}
-			   keyExtractor={(item) => item.name}
-			   renderItem={({ item }) => <Text styles={styles.item}>{item.name}</Text>}
+        style={styles.container}
+        data={allergens}
+        keyExtractor={(item) => item.name}
+        renderItem={({ item }) => <Button title={item.name} style={styles.item}
+          onPress={() => this.props.navigation.navigate("Allergen", { allergen: item })
+          } />}
       />
     }
     else {
@@ -89,15 +91,19 @@ const styles = StyleSheet.create({
     marginBottom: 65,
     paddingTop: 22,
     paddingBottom: 22,
-    borderColor: 'red',
-    borderWidth: 1,
+    marginLeft: 16,
+    marginRight: 16,
   },
   item: {
-    padding: 20,
-    fontSize: 18,
-    height: 100,
+    padding: 8,
+    textAlign: 'left',
+    fontSize: 16,
+    color: 'white',
     marginVertical: 8,
     marginHorizontal: 16,
+    borderColor: 'red',
+    borderWidth: 1,
+    backgroundColor: 'grey',
   },
 });
 
