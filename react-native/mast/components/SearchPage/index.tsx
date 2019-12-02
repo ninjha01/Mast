@@ -22,10 +22,12 @@ import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
 
 export default class SearchPage extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       allergens: [],
+      query: this.props.navigation.getParam("query", ""),
+      query_type: this.props.navigation.getParam("query_type", ""),
       loading: false,
     }
   }
