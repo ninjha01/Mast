@@ -18,7 +18,8 @@ firebase.initializeApp(config);
 'use strict';
 
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList, Button } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { Card, ListItem, } from 'react-native-elements'
 
 export default class SearchPage extends Component {
 
@@ -35,6 +36,10 @@ export default class SearchPage extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
+    this.updateAllergens(this.state.query, this.state.query_type);
+  }
+
+  updateAllergens(query, query_type) {
     firebase.firestore().collection("allergens")
       .get()
       .then((querySnapshot) => {
@@ -60,14 +65,18 @@ export default class SearchPage extends Component {
     var allergens = this.state.allergens
     console.log("rendered allergens", allergens)
     if (allergens.length > 0) {
-      var allergenList = <FlatList
-        style={styles.container}
-        data={allergens}
-        keyExtractor={(item) => item.name}
-        renderItem={({ item }) => <Button title={item.name} style={styles.item}
-          onPress={() => this.props.navigation.navigate("Allergen", { allergen: item })
-          } />}
-      />
+      var allergenList =
+        allergens.map((a, i) => {
+          return (
+            <Card style={styles.card}>
+              <ListItem
+                key={i}
+                title={a.name}
+                onPress={() => this.props.navigation.navigate("Allergen", { allergen: a })}
+              />
+            </Card>
+          );
+        })
     }
     else {
       allergenList = <Text style={styles.item}> No Allergens Found </Text>
@@ -75,7 +84,9 @@ export default class SearchPage extends Component {
     return (
       <View style={{ flex: 1 }} >
         <Text style={styles.title}>Search Page </Text>
-        {allergenList}
+        <ScrollView>
+          {allergenList}
+        </ScrollView>
       </View >
     );
   }
@@ -96,17 +107,9 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginRight: 16,
   },
-  item: {
-    padding: 8,
-    textAlign: 'left',
-    fontSize: 16,
-    color: 'white',
-    marginVertical: 8,
-    marginHorizontal: 16,
-    borderColor: 'red',
-    borderWidth: 1,
-    backgroundColor: 'grey',
-  },
+  card: {
+    padding: 0,
+  }
 });
 
 
