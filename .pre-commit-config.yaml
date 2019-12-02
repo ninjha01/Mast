@@ -14,4 +14,4 @@ repos:
     rev: "" # Use the sha or tag you want to point at
     hooks:
       - id: prettier
-        exclude: react_fronted/mast/ios/Pods/* # external
+        exclude: react-native/mast/ios/Pods/* # external
