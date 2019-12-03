@@ -1,10 +1,10 @@
 # mast
 
-
 Tasks:
- 1. Write Allergen Page
- 2. Set up CI for frontend
- 3. Set up CI for db build
- 4. Set up CI for video build
- 5. Set up backend API
- 
+
+- [x] Write basic Allergen Page
+- [ ] Write basic name based search
+- [ ] Set up CI for frontend
+- [ ] Set up CI for db build
+- [ ] Set up CI for video build
+- [ ] Set up backend API
