@@ -36,6 +36,10 @@ target 'mast' do
   pod 'RNFBAuth', :path => '../node_modules/@react-native-firebase/auth'
 
   pod 'RNFBFirestore', :path => '../node_modules/@react-native-firebase/firestore'
+
+  pod 'appcenter', path: '../node_modules/appcenter/ios'
+  pod 'appcenter-analytics', path: '../node_modules/appcenter-analytics/ios'
+  pod 'appcenter-crashes', path: '../node_modules/appcenter-crashes/ios'
   
   use_unimodules!
 

@@ -12,6 +12,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		563105DF2392D0A200E4545A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 563105DE2392D0A200E4545A /* GoogleService-Info.plist */; };
+		568AECC22396E43800E011A0 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568AECC12396E43800E011A0 /* AppCenter-Config.plist */; };
 		6EA481C2B6816E87C36FD1A1 /* libPods-mast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7989393AAEC27B20EA5DDF8 /* libPods-mast.a */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = mast/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		563105DE2392D0A200E4545A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		568AECC12396E43800E011A0 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		64F2E31D89A876AF3244E505 /* Pods-mast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mast/Pods-mast.debug.xcconfig"; sourceTree = "<group>"; };
 		6F0448F65979746E24DB7ACB /* Pods-mast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mast.release.xcconfig"; path = "Pods/Target Support Files/Pods-mast/Pods-mast.release.xcconfig"; sourceTree = "<group>"; };
 		A7989393AAEC27B20EA5DDF8 /* libPods-mast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +58,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				563105DE2392D0A200E4545A /* GoogleService-Info.plist */,
+				568AECC12396E43800E011A0 /* AppCenter-Config.plist */,
 			);
 			name = mast;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				568AECC22396E43800E011A0 /* AppCenter-Config.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				563105DF2392D0A200E4545A /* GoogleService-Info.plist in Resources */,
 			);
