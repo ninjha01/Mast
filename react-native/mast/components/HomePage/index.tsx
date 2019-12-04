@@ -42,7 +42,6 @@ export default class HomePage extends Component {
   }
 
   renderButton(label, src) {
-    x;
     return (
       <TouchableOpacity
         style={styles.button}
