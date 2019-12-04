@@ -1,0 +1,38 @@
+digraph mast_architecture {
+	rankdir=LR;
+	graph [compound=true];
+
+	// Pipeline
+	node[fillcolor="red" style="filled" fontcolor="white"];
+	db_build[label="DB Build"]
+	model_build[label="Model Build"]
+	
+	// Storage - #303F9F (dark blue)
+	node[fillcolor="#303F9F" style="filled" fontcolor="white"];
+	database[label="Firebase/Firestore"];
+	object_store[label="Firebase/Storage"];
+	
+	// Client-side Apps - #FFEB3B (yellow)
+	node[fillcolor="#FFEB3B" style="filled" fontcolor="black"];
+	android_app[label="Android App"]
+	ios_app[label="iOS App"]
+
+	
+	subgraph cluster_frontend {
+		{rank=same android_app ios_app}
+		label="React Native";
+		android_app -> ios_app [color=grey arrowhead=none];
+	}
+
+	subgraph cluster_data_pipeline {
+		{rank=same db_build model_build}
+		label="Locally Run"
+	}
+
+	database -> android_app [lhead=cluster_frontend];
+	object_store -> ios_app [lhead=cluster_frontend];
+	db_build -> database;
+	model_build -> object_store;
+}
+
+
