@@ -1,15 +1,22 @@
 # mast
 
+- [ ] Write basic search
+  - [ ] Write category search
+  - [ ] Write name search
+
 # Setup DB build
+
 ```
 conda create -n mast python=3.7
 source activate mast
 pip install -r requirements.txt
 pre-commit install
 ```
+
 # Set up react native
 
 ## Common
+
 ```
 brew install node
 brew install watchman
@@ -24,10 +31,13 @@ pod install --repo-update # not sure if both are necessary
 ## iOS
 
 setup Xcode
+
 ```
 sudo gem install cocoapods
 ```
+
 ## Android
+
 ```
 brew tap AdoptOpenJDK/openjdk
 brew cask install adoptopenjdk8
