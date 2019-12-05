@@ -1,0 +1,54 @@
+digraph mast_deployment {
+	rankdir=LR;
+	graph [compound=true];
+
+	// Repo
+	node[shape=box fillcolor="white" Style="Filled" Fontcolor="black"];
+	master[label="branch: master"]
+	internal[label="branch: internal"]
+	staging[label="branch: staging"]
+	
+	
+	// Build Step
+	node[shape=box fillcolor="white" Style="Filled" Fontcolor="black"];
+	build_app[label="Microsoft App Center"];
+	build_db[label="GitHub Actions: DB Build"]
+	build_assets[label="GitHub Actions: Asset Build"]
+	
+	// Releases
+	node[shape=box fillcolor="white" Style="Filled" Fontcolor="black"];
+	dev_users[label="Developers"]
+	internal_users[label="Inbio Internal"]
+	public_users[label="Public Release"]
+	db_backend[label="Firebase Firestore"]
+	object_store_backend[label="Firebase Object Store"]
+
+	
+	subgraph cluster_git_repo {
+		{rank=same master internal staging}
+		label="GitHub";
+	}
+
+	subgraph cluster_build_steps {
+		{rank=same build_app build_db build_assets}
+		label="Build Steps"
+	}
+
+	subgraph cluster_releases {
+		{rank=same dev_users internal_users public_users db_backend object_store_backend}
+		label="Releases"
+	}
+
+	//Master path
+	master -> build_db -> db_backend [color="red"]
+	master -> build_assets -> object_store_backend [color="red"]
+	master -> build_app -> public_users [color="red"]
+
+	//Internal path
+	internal -> build_app [color="green"]
+	build_app -> internal_users [color="green"]
+
+	//Staging path
+	staging -> build_app [color="blue"]
+	build_app -> dev_users [color="blue"]
+}
