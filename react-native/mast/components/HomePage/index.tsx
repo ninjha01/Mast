@@ -9,12 +9,12 @@ import {
   Image,
   View,
   Text,
-  StyleSheet,
-  Button
+  StyleSheet
 } from "react-native";
+import { SearchBar } from "react-native-elements";
 import Images from "../../assets/";
-import SearchableDropdown from "react-native-searchable-dropdown";
-import Firebase from "../../components/utils/Firebase";
+import Firebase from "../utils/Firebase";
+import Common from "../utils/Common";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -73,30 +73,15 @@ export default class HomePage extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <SearchableDropdown
-          onTextChange={text => this.updateSearch(text)}
-          onItemSelect={item => this.foundAllergen(item)}
-          containerStyle={{ padding: 5 }}
-          textInputStyle={{
-            padding: 12,
-            borderWidth: 1,
-            borderColor: "#ccc",
-            backgroundColor: "#FAF7F6"
-          }}
-          itemStyle={{
-            padding: 10,
-            marginTop: 2,
-            backgroundColor: "#FAF9F8",
-            borderColor: "#bbb",
-            borderWidth: 1
-          }}
-          itemTextStyle={{
-            color: "#222"
-          }}
-          items={items}
-          placeholder="Search for Allergens"
-          resetValue={false}
-          underlineColorAndroid="transparent"
+        <SearchBar
+          lightTheme
+          round
+          searchIcon={{ size: 24 }}
+          onChangeText={this.updateSearch}
+          onSubmitEditing={this.submitQuery}
+          onClear={text => this.updateSearch("")}
+          placeholder="Search Allergens..."
+          value={this.state.query}
         />
         <Text style={styles.title}>{this.state.title}</Text>
         <View style={styles.container}>
@@ -116,21 +101,6 @@ export default class HomePage extends Component {
     );
   }
 }
-
-const items = [
-  {
-    allergenicity: "3 out of 13 (23%) A. siro RAST-positive patient...",
-    allergenicity_ref: "10474032",
-    biochemical_name: "Fatty acid-binding protein",
-    category: "House Dust Mite",
-    mw: "15 kDa",
-    name: "Aca s 13",
-    order: "Astigmata",
-    route: "Airway",
-    source: "Animalia Arthropoda",
-    species: "Acarus siro"
-  }
-];
 
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;

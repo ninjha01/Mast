@@ -12,8 +12,6 @@ const config = {
   cacheSizeBytes: firestore.CACHE_SIZE_UNLIMITED // unlimited cache size
 };
 
-firebase.initializeApp(config);
-
 class Firebase {
   constructor() {
     if (firebase.apps.length < 1) {
