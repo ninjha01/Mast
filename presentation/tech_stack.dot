@@ -1,4 +1,4 @@
-digraph mast_architecture {
+digraph mast_tech_stack {
 	rankdir=LR;
 	graph [compound=true];
 
