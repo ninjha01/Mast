@@ -12,46 +12,53 @@ import {
   StyleSheet,
   Button
 } from "react-native";
-import { SearchBar } from "react-native-elements";
 import Images from "../../assets/";
 import SearchableDropdown from "react-native-searchable-dropdown";
+import Firebase from "../../components/utils/Firebase";
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       query: "",
-      query_type: "name",
-      title: "AllergenGuru"
+      query_type: "",
+      title: "AllergenGuru",
+      firebase: new Firebase()
     };
     this.updateSearch = this.updateSearch.bind(this);
     this.submitQuery = this.submitQuery.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.foundAllergen = this.foundAllergen.bind(this);
+    this.buttonPressed = this.buttonPressed.bind(this);
   }
 
-  updateSearch(text) {
+  updateSearch(text: string) {
     this.setState({
-      query: text
+      query: text,
+      query_type: "name"
     });
   }
 
-  submitQuery() {
+  submitQuery(query?: string, query_type: string) {
     this.props.navigation.navigate("Search", {
       query: this.state.query,
-      query_type: this.state.query_type
+      query_type: this.state.query_type,
+      firebase: this.state.firebase
     });
   }
 
-  renderButton(label, src) {
+  buttonPressed(label: string) {
+    this.setState({ query: label, query_type: "category" }, () => {
+      this.submitQuery();
+    });
+  }
+
+  renderButton(label: string, src: string) {
     return (
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.5}
-        onPress={() => {
-          this.setState({ query: label, query_type: "category" });
-          this.submitQuery();
-        }}
+        onPress={() => this.buttonPressed(label)}
       >
         <Image source={src} style={styles.icon} />
         <Text style={styles.label}>{label}</Text>
