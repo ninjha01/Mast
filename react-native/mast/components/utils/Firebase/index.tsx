@@ -1,8 +1,8 @@
 import firebase from "@react-native-firebase/app";
 import firestore from "@react-native-firebase/firestore";
-
+import { FIREBASE_API_KEY } from "react-native-dotenv";
 const config = {
-  apiKey: ***REMOVED***,
+  apiKey: FIREBASE_API_KEY,
   authDomain: "mast-b0959.firebaseapp.com",
   databaseURL: "https://mast-b0959.firebaseio.com",
   projectId: "mast-b0959",
