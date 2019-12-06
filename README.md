@@ -4,7 +4,9 @@
 
 # Todo
 
-- [ ] Verify Asset build
+- [ ] write ffmpeg script
+- [ ] scrub firebase secret
+- [ ] set firebase access rules
 
 - [x] Write basic search
   - [x] Write category search
