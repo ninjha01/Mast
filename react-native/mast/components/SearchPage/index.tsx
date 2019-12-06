@@ -46,7 +46,7 @@ export default class SearchPage extends Component {
     if (allergens.length > 0) {
       var allergenList = allergens.map((a, i) => {
         return (
-          <Card style={styles.card}>
+          <Card key={i} style={styles.card}>
             <ListItem
               key={i}
               title={a.name}
