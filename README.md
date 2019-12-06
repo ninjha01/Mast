@@ -4,9 +4,9 @@
 
 # Todo
 
-- [ ] write ffmpeg script
+- [x] write ffmpeg script
 - [ ] scrub firebase secret
-- [ ] set firebase access rules
+- [x] set firebase access rules
 
 - [x] Write basic search
   - [x] Write category search
