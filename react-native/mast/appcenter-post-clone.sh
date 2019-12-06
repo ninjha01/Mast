@@ -10,3 +10,5 @@ yarn install
 cd ios/
 pod install && pod install --repo-update # unsure if both neccesary
 
+echo "Checking env"
+cat .env
