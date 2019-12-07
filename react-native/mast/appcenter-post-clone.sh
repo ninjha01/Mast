@@ -10,10 +10,3 @@ npm install
 yarn install
 cd ios/
 pod install && pod install --repo-update # unsure if both neccesary
-
-echo "Checking env"
-cat .env
-echo "$USER_DEFINED_FIREBASE_API_KEY"
-echo "$FIREBASE_API_KEY"
-
-

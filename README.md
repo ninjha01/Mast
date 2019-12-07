@@ -2,15 +2,16 @@
 
 [![Build status](https://build.appcenter.ms/v0.1/apps/0323f018-70aa-4f18-8632-fe6a8e7b82fd/branches/staging/badge)](https://appcenter.ms)
 
+
 # Todo
 
-- [ ] write ffmpeg script
-- [ ] scrub firebase secret
-- [ ] set firebase access rules
+- [ ] Add Video to Allergen Page
+  - [ ] Set up Firebase Storage
+  - [ ] Add UI elements
 
-- [x] Write basic search
-  - [x] Write category search
-  - [x] Write name search
+- [x] write ffmpeg script
+- [x] scrub firebase secret
+- [x] set firebase access rules
 
 # Setup DB build
 

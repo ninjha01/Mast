@@ -1,6 +1,9 @@
 import firebase from "@react-native-firebase/app";
 import firestore from "@react-native-firebase/firestore";
+import auth from "@react-native-firebase/auth";
+
 import { FIREBASE_API_KEY } from "react-native-dotenv";
+
 const config = {
   apiKey: FIREBASE_API_KEY,
   authDomain: "mast-b0959.firebaseapp.com",
@@ -17,6 +20,17 @@ class Firebase {
     if (firebase.apps.length < 1) {
       firebase.initializeApp(config);
     }
+
+    if (!auth().currentUser) {
+      auth()
+        .signInAnonymously()
+        .catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
+    }
+
     this.getAllergenCollection();
   }
 
