@@ -5,13 +5,13 @@
 
 # Todo
 
-- [x] write ffmpeg script
-- [ ] scrub firebase secret
-- [x] set firebase access rules
+- [ ] Add Video to Allergen Page
+  - [ ] Set up Firebase Storage
+  - [ ] Add UI elements
 
-- [x] Write basic search
-  - [x] Write category search
-  - [x] Write name search
+- [x] write ffmpeg script
+- [x] scrub firebase secret
+- [x] set firebase access rules
 
 # Setup DB build
 
