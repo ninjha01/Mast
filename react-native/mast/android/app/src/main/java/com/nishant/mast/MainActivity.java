@@ -1,4 +1,4 @@
-package com.mast;
+package com.nishant.mast;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
