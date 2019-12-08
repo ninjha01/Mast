@@ -139,6 +139,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation project(':@react-native-firebase_auth')
     implementation project(':@react-native-firebase_app')
     implementation project(':@react-native-firebase_firestore')
@@ -157,3 +158,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+
+apply plugin: 'com.google.gms.google-services'
