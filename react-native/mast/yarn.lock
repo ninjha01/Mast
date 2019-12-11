@@ -1346,6 +1346,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-6.1.0.tgz#71a671cf719ab2a66df6e8eb1d2f1feefa43e966"
   integrity sha512-1c2R57hWxakN/5GLMor88Jt9LA8Rih41w0E0xn/TCtZ8v1vSRoeHmmL8OqpLFYYPzO8Lp7twUSrjbPeGHhyCxA==
 
+"@react-native-firebase/storage@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-6.2.0.tgz#011e2f597794eadc55f3f3793e5cf11a72f62efb"
+  integrity sha512-N+dC2wR5SKo8y2Y9WpMGn52qqCWIzUaiaJ4ft0lRTv8cM+f72RjmEDW9h52fOd+4gBC4aV3WSe4RVACob72w7g==
+
 "@react-navigation/core@^3.5.1":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
@@ -4646,6 +4651,11 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
+keymirror@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/keymirror/-/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
+  integrity sha1-kYiJ6hP40KQufFVyUO7nE63JXDU=
+
 kind-of@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -6318,6 +6328,15 @@ react-native-unimodules@0.6.0:
     unimodules-sensors-interface "~4.0.0"
     unimodules-task-manager-interface "~4.0.0"
 
+react-native-video@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-video/-/react-native-video-5.0.2.tgz#8f07da0cd85a1d4b316d115f3786409efc9e39fb"
+  integrity sha512-zbItbMH0uZYkK7xFKa41+950QjoTrIl60bY1vAP7gxTn20HGHvHZRw28h9A5npK5T0QuWMAkn8twaGzqcDkTug==
+  dependencies:
+    keymirror "^0.1.1"
+    prop-types "^15.5.10"
+    shaka-player "^2.4.4"
+
 react-native-view-shot@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-2.6.0.tgz#3b23675826f67658366352c4b97b59a6aded2f43"
@@ -6891,6 +6910,11 @@ setprototypeof@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
   integrity sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
+
+shaka-player@^2.4.4:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-2.5.6.tgz#1397ffdee9d60fa50c13cda6d584da5228b4607f"
+  integrity sha512-z1BM/kpg5OVk57w5gXYBGk78Le04gfCHBOpT106Nz7h4VU7im7o8ZldUKxC9+FlSL4sPvdU8lY6OxL7L3hw5Fw==
 
 shallow-clone@^1.0.0:
   version "1.0.0"

@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Card } from "react-native-elements";
+import Video from "react-native-video";
 
 export default class AllergenPage extends Component {
   constructor(props) {
@@ -22,6 +23,14 @@ export default class AllergenPage extends Component {
 
   render() {
     const allergen = this.state.allergen;
+    var videoURL;
+
+    // TODO: actually call Firebase class method
+    if (typeof allergen.pdb_id != "undefined") {
+      videoURL = "movies/" + allergen.pdb_id + ".mp4";
+    } else {
+      videoURL = "movies/not_found.mp4";
+    }
     const list = [
       {
         label: "Name",
@@ -62,6 +71,15 @@ export default class AllergenPage extends Component {
     ];
     return (
       <View style={styles.container}>
+        <Video
+          source={{ uri: { videoURL } }} // Can be a URL or a local file.
+          ref={ref => {
+            this.player = ref;
+          }} // Store reference
+          onBuffer={this.onBuffer} // Callback when remote video is buffering
+          onError={this.videoError} // Callback when video cannot be loaded
+          style={styles.backgroundVideo}
+        />
         <Text style={styles.title}>
           {this.state.allergen.name} |#| {this.state.allergen.category}
         </Text>
