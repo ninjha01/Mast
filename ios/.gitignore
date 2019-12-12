@@ -32,4 +32,9 @@ xcuserdata
 # Carthage
 Carthage/Checkouts
 Carthage/Build
-Icon
+
+# macOS
+Icon
+
+# CocoaPods
+Pods/

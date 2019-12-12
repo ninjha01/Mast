@@ -1,6 +1,0 @@
-framework module Pods_MastUITests {
-  umbrella header "Pods-MastUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
