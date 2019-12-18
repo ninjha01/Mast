@@ -377,15 +377,15 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - RNFBApp (6.1.0):
+  - RNFBApp (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - React
-  - RNFBAuth (6.1.0):
+  - RNFBAuth (6.2.0):
     - Firebase/Auth (~> 6.13.0)
     - Firebase/Core (~> 6.13.0)
     - React
     - RNFBApp
-  - RNFBFirestore (6.1.0):
+  - RNFBFirestore (6.2.0):
     - Firebase/Core (~> 6.13.0)
     - Firebase/Firestore (~> 6.13.0)
     - React
@@ -627,9 +627,9 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   React: 36d0768f9e93be2473b37e7fa64f92c1d5341eef
-  RNFBApp: edeadb99669dd39f9d7f8f7f68d420fda4d8b7d8
-  RNFBAuth: ed3f9103bada30d38bf7e3a7e1431e69eca0e314
-  RNFBFirestore: bd3644bd512cc6f78e13d34ea13e7e642ac3c1b2
+  RNFBApp: 5b215aacc09105a1761de31b9a0eb2abcce06253
+  RNFBAuth: 61673c0d38ce225c315e7be13a1b494904baedd2
+  RNFBFirestore: 5de4ae898df51a3ecc16a45db15019836c5cec87
   RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
   RNReanimated: 1b52415c4302f198cb581282a0166690bad62c43
   RNScreens: f28b48b8345f2f5f39ed6195518291515032a788
