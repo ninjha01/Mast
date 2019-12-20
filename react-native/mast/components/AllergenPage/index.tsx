@@ -19,22 +19,30 @@ export default class AllergenPage extends Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: true });
     this.populateVideo();
-    this.setState({ loading: false });
   }
 
   populateVideo() {
+    this.setState({ loading: true });
     const allergen = this.state.allergen;
     console.log(allergen.pdb_id);
     if (allergen.pdb_id) {
-      this.state.firebase.getURLByName(allergen.pdb_id + ".mp4").then(url => {
-        this.setState({
-          videoSrc: { uri: url }
+      this.state.firebase
+        .getURLByName(allergen.pdb_id + ".mp4")
+        .then(url => {
+          this.setState({
+            videoSrc: { uri: url },
+            loading: false
+          });
+        })
+        .catch(err => {
+          this.setState({ error: err.message });
         });
-      });
     } else {
-      this.setState({ videoSrc: Media.common.not_found });
+      this.setState({
+        videoSrc: Media.common.not_found,
+        loading: false
+      });
     }
   }
 
@@ -47,8 +55,9 @@ export default class AllergenPage extends Component {
   }
 
   render() {
+    //TODO: gracefully handle errors
     if (this.state.error) {
-      return <Text style={styles.title}>this.state.error</Text>;
+      return <Text style={styles.error}>{this.state.error}</Text>;
     }
     if (this.state.loading) {
       return <Text style={styles.title}>Loading</Text>;
@@ -101,8 +110,8 @@ export default class AllergenPage extends Component {
           ref={ref => {
             this.player = ref;
           }}
-          onBuffer={() => console.log("buffering")}
-          onError={() => console.log("error")}
+          onBuffer={() => console.log("Buffering")}
+          onError={() => this.setState({ error: true })}
           style={styles.video}
           repeat={true}
           muted={true}
@@ -121,6 +130,10 @@ export default class AllergenPage extends Component {
 }
 
 const styles = StyleSheet.create({
+  error: {
+    flex: 1,
+    color: "red"
+  },
   title: {
     fontSize: 32,
     textAlign: "center",
