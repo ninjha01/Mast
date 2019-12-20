@@ -62,9 +62,8 @@ class Firebase {
 
   //TODO: replace dummy url
   getURLByName(filename) {
-    storage = firebase.storage();
     const gsUrl = "gs://mast-b0959.appspot.com/movies/1F6R.mp4";
-    const videoRef = storage.refFromURL(gsUrl);
+    const videoRef = firebase.storage().refFromURL(gsUrl);
     return videoRef.getDownloadURL();
   }
 }

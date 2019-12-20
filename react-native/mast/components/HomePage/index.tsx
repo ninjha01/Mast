@@ -12,7 +12,7 @@ import {
   StyleSheet
 } from "react-native";
 import { SearchBar } from "react-native-elements";
-import Images from "../../assets/";
+import Media from "../../assets/";
 import Firebase from "../utils/Firebase";
 import Common from "../utils/Common";
 
@@ -85,7 +85,7 @@ export default class HomePage extends Component {
         />
         <Text style={styles.title}>{this.state.title}</Text>
         <View style={styles.container}>
-          <Image style={styles.icon} source={Images.common.logo} />
+          <Image style={styles.icon} source={Media.common.logo} />
         </View>
         <ScrollView contentContainerStyle={styles.grid}>
           <FlatList
@@ -144,38 +144,38 @@ const styles = StyleSheet.create({
 const buttons = [
   {
     label: "Animal",
-    imageSrc: Images.home_page.icons.animal
+    imageSrc: Media.home_page.icons.animal
   },
   {
     label: "Cockroach",
-    imageSrc: Images.home_page.icons.cockroach
+    imageSrc: Media.home_page.icons.cockroach
   },
   {
     label: "Food",
-    imageSrc: Images.home_page.icons.food
+    imageSrc: Media.home_page.icons.food
   },
   {
     label: "House Dust Mite",
-    imageSrc: Images.home_page.icons.house_dust_mite
+    imageSrc: Media.home_page.icons.house_dust_mite
   },
   {
     label: "Mold",
-    imageSrc: Images.home_page.icons.mold
+    imageSrc: Media.home_page.icons.mold
   },
   {
     label: "Latex",
-    imageSrc: Images.home_page.icons.latex
+    imageSrc: Media.home_page.icons.latex
   },
   {
     label: "Venom",
-    imageSrc: Images.home_page.icons.venom
+    imageSrc: Media.home_page.icons.venom
   },
   {
     label: "Pollen",
-    imageSrc: Images.home_page.icons.pollen
+    imageSrc: Media.home_page.icons.pollen
   },
   {
     label: "Other",
-    imageSrc: Images.home_page.icons.other
+    imageSrc: Media.home_page.icons.other
   }
 ];

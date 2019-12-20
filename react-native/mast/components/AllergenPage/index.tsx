@@ -4,12 +4,15 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Card } from "react-native-elements";
 import Video from "react-native-video";
+import Media from "../../assets/";
+import Firebase from "../utils/Firebase";
 
 export default class AllergenPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allergen: this.props.navigation.getParam("allergen", { name: "unknown" })
+      allergen: this.props.navigation.getParam("allergen", { name: "unknown" }),
+      firebase: this.props.navigation.getParam("firebase", null)
     };
   }
 
@@ -23,13 +26,15 @@ export default class AllergenPage extends Component {
 
   render() {
     const allergen = this.state.allergen;
-    var videoURL;
+    var videoSrc;
 
     // TODO: actually call Firebase class method
     if (typeof allergen.pdb_id != "undefined") {
-      videoURL = "movies/" + allergen.pdb_id + ".mp4";
+      videoSrc = {
+        uri: this.state.firebase.getURLByName(allergen.pdb_id + ".mp4")
+      };
     } else {
-      videoURL = "movies/not_found.mp4";
+      videoSrc = Media.common.not_found;
     }
     const list = [
       {
@@ -71,18 +76,18 @@ export default class AllergenPage extends Component {
     ];
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>{this.state.allergen.name}</Text>
         <Video
-          source={{ uri: { videoURL } }} // Can be a URL or a local file.
+          source={videoSrc}
           ref={ref => {
             this.player = ref;
-          }} // Store reference
-          onBuffer={this.onBuffer} // Callback when remote video is buffering
-          onError={this.videoError} // Callback when video cannot be loaded
-          style={styles.backgroundVideo}
+          }}
+          onBuffer={() => console.log("buffering")}
+          onError={() => console.log("error")}
+          style={styles.video}
+          repeat={true}
+          muted={true}
         />
-        <Text style={styles.title}>
-          {this.state.allergen.name} |#| {this.state.allergen.category}
-        </Text>
         <ScrollView style={styles.list}>
           {list.map(l => (
             <Card>
@@ -98,20 +103,20 @@ export default class AllergenPage extends Component {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 18,
+    fontSize: 32,
     textAlign: "center",
-    marginTop: 65
+    marginTop: 16
   },
   container: {
     flex: 1,
-    paddingTop: 16,
-    paddingBottom: 16,
+    paddingTop: 8,
+    paddingBottom: 8,
     marginLeft: 16,
     marginRight: 16
   },
   list: {
-    marginTop: 65,
-    marginBottom: 65,
+    marginTop: 8,
+    marginBottom: 8,
     marginLeft: 16,
     marginRight: 16
   },
@@ -123,5 +128,10 @@ const styles = StyleSheet.create({
   },
   card: {
     padding: 0
+  },
+  video: {
+    aspectRatio: 1,
+    width: "100%",
+    backgroundColor: "white"
   }
 });

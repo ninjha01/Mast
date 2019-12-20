@@ -1,6 +1,7 @@
-const images = {
+const media = {
   common: {
-    logo: require("./splash_screen/logo.png")
+    logo: require("./splash_screen/logo.png"),
+    not_found: require("./common/not_found.mp4")
   },
   home_page: {
     icons: {
@@ -19,4 +20,4 @@ const images = {
   allergen_page: {}
 };
 
-export default images;
+export default media;

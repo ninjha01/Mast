@@ -37,6 +37,10 @@ target 'mast' do
 
   pod 'RNFBFirestore', :path => '../node_modules/@react-native-firebase/firestore'
 
+  pod 'RNFBStorage', :path => '../node_modules/@react-native-firebase/storage'
+
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+  
   pod 'appcenter', path: '../node_modules/appcenter/ios'
   pod 'appcenter-analytics', path: '../node_modules/appcenter-analytics/ios'
   pod 'appcenter-crashes', path: '../node_modules/appcenter-crashes/ios'

@@ -51,7 +51,10 @@ export default class SearchPage extends Component {
               key={i}
               title={a.name}
               onPress={() =>
-                this.props.navigation.navigate("Allergen", { allergen: a })
+                this.props.navigation.navigate("Allergen", {
+                  allergen: a,
+                  firebase: this.state.firebase
+                })
               }
             />
           </Card>
