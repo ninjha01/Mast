@@ -1,0 +1,12 @@
+#Should be regenerated
+*.pdb
+*.db
+*.3gp
+*.mp4
+*.dae
+*.scn
+*.png
+
+#Temp files
+__pycache__/
+Icon

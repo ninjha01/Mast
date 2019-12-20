@@ -1,16 +1,0 @@
-#Should be regenerated
-*.pdb
-*.db
-*.3gp
-*.mp4
-*.dae
-*.scn
-*.png
-database.csv
-database.json
-html/
-assets/
-
-#Temp files
-__pycache__/
-Icon
