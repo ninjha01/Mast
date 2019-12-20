@@ -35,3 +35,9 @@ def main():
 def run_command(command, shell_bool=False):
     with open(os.devnull, "w") as devnull:
         subprocess.run(command, stdout=devnull, stderr=devnull, shell=shell_bool)
+
+
+if __name__ == "__main__":
+    main()
+
+# ffmpeg -i ./frames/4pmk/frame%04d.png -c:v libx264 -vf fps=25 -pix_fmt yuv420p ./output/4pmk.mp4
