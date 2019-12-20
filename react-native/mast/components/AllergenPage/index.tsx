@@ -12,8 +12,30 @@ export default class AllergenPage extends Component {
     super(props);
     this.state = {
       allergen: this.props.navigation.getParam("allergen", { name: "unknown" }),
-      firebase: this.props.navigation.getParam("firebase", null)
+      firebase: this.props.navigation.getParam("firebase", null),
+      loading: true,
+      videoSrc: ""
     };
+  }
+
+  componentDidMount() {
+    this.setState({ loading: true });
+    this.populateVideo();
+    this.setState({ loading: false });
+  }
+
+  populateVideo() {
+    const allergen = this.state.allergen;
+    console.log(allergen.pdb_id);
+    if (allergen.pdb_id) {
+      this.state.firebase.getURLByName(allergen.pdb_id + ".mp4").then(url => {
+        this.setState({
+          videoSrc: { uri: url }
+        });
+      });
+    } else {
+      this.setState({ videoSrc: Media.common.not_found });
+    }
   }
 
   renderRow(label, value) {
@@ -25,17 +47,14 @@ export default class AllergenPage extends Component {
   }
 
   render() {
-    const allergen = this.state.allergen;
-    var videoSrc;
-
-    // TODO: actually call Firebase class method
-    if (typeof allergen.pdb_id != "undefined") {
-      videoSrc = {
-        uri: this.state.firebase.getURLByName(allergen.pdb_id + ".mp4")
-      };
-    } else {
-      videoSrc = Media.common.not_found;
+    if (this.state.error) {
+      return <Text style={styles.title}>this.state.error</Text>;
     }
+    if (this.state.loading) {
+      return <Text style={styles.title}>Loading</Text>;
+    }
+
+    const allergen = this.state.allergen;
     const list = [
       {
         label: "Name",
@@ -78,7 +97,7 @@ export default class AllergenPage extends Component {
       <View style={styles.container}>
         <Text style={styles.title}>{this.state.allergen.name}</Text>
         <Video
-          source={videoSrc}
+          source={this.state.videoSrc}
           ref={ref => {
             this.player = ref;
           }}

@@ -1,7 +1,7 @@
 import firebase from "@react-native-firebase/app";
 import firestore from "@react-native-firebase/firestore";
 import auth from "@react-native-firebase/auth";
-import storage from "@react-native-firebase/storage";
+import "@react-native-firebase/storage";
 
 import { FIREBASE_API_KEY } from "react-native-dotenv";
 
@@ -62,8 +62,9 @@ class Firebase {
 
   //TODO: replace dummy url
   getURLByName(filename) {
-    const gsUrl = "gs://mast-b0959.appspot.com/movies/1F6R.mp4";
-    const videoRef = firebase.storage().refFromURL(gsUrl);
+    const storage = firebase.storage();
+    const gsUrl = "gs://mast-b0959.appspot.com/movies/" + filename;
+    const videoRef = storage.refFromURL(gsUrl);
     return videoRef.getDownloadURL();
   }
 }
