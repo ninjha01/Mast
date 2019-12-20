@@ -7,6 +7,7 @@ import {
   FlatList,
   ScrollView,
   Image,
+  ImageBackground,
   View,
   Text,
   StyleSheet
@@ -17,12 +18,22 @@ import Firebase from "../utils/Firebase";
 import Common from "../utils/Common";
 
 export default class HomePage extends Component {
+  static navigationOptions = {
+    title: "AllergenGuru",
+    headerStyle: {
+      backgroundColor: "#30afb8"
+    },
+    headerTitleStyle: {
+      fontWeight: "bold",
+      color: "white"
+    }
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       query: "",
       query_type: "",
-      title: "AllergenGuru",
       firebase: new Firebase()
     };
     this.updateSearch = this.updateSearch.bind(this);
@@ -72,32 +83,37 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <SearchBar
-          lightTheme
-          round
-          searchIcon={{ size: 24 }}
-          onChangeText={this.updateSearch}
-          onSubmitEditing={this.submitQuery}
-          onClear={text => this.updateSearch("")}
-          placeholder="Search Allergens..."
-          value={this.state.query}
-        />
-        <Text style={styles.title}>{this.state.title}</Text>
-        <View style={styles.container}>
-          <Image style={styles.icon} source={Media.common.logo} />
-        </View>
-        <ScrollView contentContainerStyle={styles.grid}>
-          <FlatList
-            data={buttons}
-            renderItem={({ item }) =>
-              this.renderButton(item.label, item.imageSrc)
-            }
-            numColumns={3}
-            keyExtractor={(item, index) => index.toString()}
+      <ImageBackground
+        source={Media.home_page.background}
+        style={{ width: "100%", height: "100%" }}
+      >
+        <View style={{ flex: 1 }}>
+          <SearchBar
+            lightTheme
+            round
+            searchIcon={{ size: 24 }}
+            onChangeText={this.updateSearch}
+            onSubmitEditing={this.submitQuery}
+            onClear={text => this.updateSearch("")}
+            placeholder="Search Allergens..."
+            value={this.state.query}
           />
-        </ScrollView>
-      </View>
+          <Text style={styles.title}>{this.state.title}</Text>
+          <View style={styles.container}>
+            <Image style={styles.icon} source={Media.common.logo} />
+          </View>
+          <ScrollView contentContainerStyle={styles.grid}>
+            <FlatList
+              data={buttons}
+              renderItem={({ item }) =>
+                this.renderButton(item.label, item.imageSrc)
+              }
+              numColumns={3}
+              keyExtractor={(item, index) => index.toString()}
+            />
+          </ScrollView>
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -125,9 +141,11 @@ const styles = StyleSheet.create({
     padding: 8
   },
   label: {
-    fontSize: 0.03 * width,
+    fontSize: 0.038 * width,
+    fontWeight: "bold",
     textAlign: "center",
-    padding: 8
+    padding: 8,
+    color: "white"
   },
   button: {
     flex: 1,

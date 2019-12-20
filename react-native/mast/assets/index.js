@@ -4,6 +4,7 @@ const media = {
     not_found: require("./common/not_found.mp4")
   },
   home_page: {
+    background: require("./home_page/main_background.png"),
     icons: {
       animal: require("./home_page/Icons/icon_animal.png"),
       cockroach: require("./home_page/Icons/icon_cockroach.png"),
