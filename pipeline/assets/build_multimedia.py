@@ -18,6 +18,7 @@ def main():
     if not os.path.exists("./frames"):
         os.makedirs("./frames")
     bar = Bar("Media Generation", max=len(pdb_list))
+    # TODO: Use multiprocessing
     for pdb in pdb_list:
         pdb = pdb.lower()
         frame_folder_path = "./frames/" + pdb + "/"

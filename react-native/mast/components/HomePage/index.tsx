@@ -15,24 +15,19 @@ import {
 import { SearchBar } from "react-native-elements";
 import Media from "../../assets/";
 import Firebase from "../utils/Firebase";
-import Common from "../utils/Common";
+import NavigationStyles from "../Navigation";
 
 export default class HomePage extends Component {
-  static navigationOptions = {
-    title: "AllergenGuru",
-    headerStyle: {
-      backgroundColor: "#30afb8"
-    },
-    headerTitleStyle: {
-      fontWeight: "bold",
-      color: "white"
-    }
+  static navigationOptions = ({ navigation }) => {
+    return NavigationStyles.home_page;
   };
 
   constructor(props) {
     super(props);
     this.state = {
+      // Category is defined when searching for a category, Query is used for arbitrary strings,
       query: "",
+      category: "",
       query_type: "",
       firebase: new Firebase()
     };
@@ -50,26 +45,39 @@ export default class HomePage extends Component {
     });
   }
 
-  submitQuery(query?: string, query_type: string) {
+  submitQuery(query?: string, query_type?: string) {
+    // TODO: pass nav bar styling to search page
+    var nextNavigationOptions = NavigationStyles.home_page;
+    if (this.state.query_type == "category") {
+      nextNavigationOptions = NavigationStyles[this.state.category];
+    } else {
+      nextNavigationOptions["title"] = "Search: " + this.state.query;
+    }
+    console.log(this.state.query, nextNavigationOptions);
     this.props.navigation.navigate("Search", {
       query: this.state.query,
       query_type: this.state.query_type,
-      firebase: this.state.firebase
+      tag: this.state.category,
+      firebase: this.state.firebase,
+      navigationOptions: nextNavigationOptions
     });
   }
 
-  buttonPressed(label: string) {
-    this.setState({ query: label, query_type: "category" }, () => {
-      this.submitQuery();
-    });
+  buttonPressed(label: string, tag?: string) {
+    this.setState(
+      { query: label, category: tag, query_type: "category" },
+      () => {
+        this.submitQuery();
+      }
+    );
   }
 
-  renderButton(label: string, src: string) {
+  renderButton(label: string, tag: string, src: string) {
     return (
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.5}
-        onPress={() => this.buttonPressed(label)}
+        onPress={() => this.buttonPressed(label, tag)}
       >
         <Image source={src} style={styles.icon} />
         <Text style={styles.label}>{label}</Text>
@@ -106,7 +114,7 @@ export default class HomePage extends Component {
             <FlatList
               data={buttons}
               renderItem={({ item }) =>
-                this.renderButton(item.label, item.imageSrc)
+                this.renderButton(item.label, item.tag, item.imageSrc)
               }
               numColumns={3}
               keyExtractor={(item, index) => index.toString()}
@@ -162,38 +170,47 @@ const styles = StyleSheet.create({
 const buttons = [
   {
     label: "Animal",
+    tag: "animal",
     imageSrc: Media.home_page.icons.animal
   },
   {
     label: "Cockroach",
+    tag: "cockroach",
     imageSrc: Media.home_page.icons.cockroach
   },
   {
     label: "Food",
+    tag: "food",
     imageSrc: Media.home_page.icons.food
   },
   {
     label: "House Dust Mite",
+    tag: "house_dust_mite",
     imageSrc: Media.home_page.icons.house_dust_mite
   },
   {
     label: "Mold",
+    tag: "mold",
     imageSrc: Media.home_page.icons.mold
   },
   {
     label: "Latex",
+    tag: "latex",
     imageSrc: Media.home_page.icons.latex
   },
   {
     label: "Venom",
+    tag: "venom",
     imageSrc: Media.home_page.icons.venom
   },
   {
     label: "Pollen",
+    tag: "pollen",
     imageSrc: Media.home_page.icons.pollen
   },
   {
     label: "Other",
+    tag: "other",
     imageSrc: Media.home_page.icons.other
   }
 ];

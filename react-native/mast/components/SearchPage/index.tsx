@@ -4,14 +4,20 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Card, ListItem } from "react-native-elements";
 import Firebase from "../utils/Firebase";
+import NavigationStyles from "../Navigation";
 
 export default class SearchPage extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return navigation.getParam("navigationOptions", null);
+  };
+
   constructor(props) {
     super(props);
     this.state = {
       allergens: [],
       query: this.props.navigation.getParam("query", null),
       query_type: this.props.navigation.getParam("query_type", null),
+      tag: this.props.navigation.getParam("tag", null),
       loading: false,
       firebase: this.props.navigation.getParam("firebase", null)
     };
@@ -34,6 +40,7 @@ export default class SearchPage extends Component {
         });
       });
   }
+  p;
 
   render() {
     if (this.state.error) {
@@ -53,6 +60,7 @@ export default class SearchPage extends Component {
               onPress={() =>
                 this.props.navigation.navigate("Allergen", {
                   allergen: a,
+                  tag: this.state.tag,
                   firebase: this.state.firebase
                 })
               }
@@ -65,7 +73,6 @@ export default class SearchPage extends Component {
     }
     return (
       <View style={{ flex: 1 }}>
-        <Text style={styles.title}>Search Page </Text>
         <ScrollView>{allergenList}</ScrollView>
       </View>
     );

@@ -6,11 +6,18 @@ import { Card } from "react-native-elements";
 import Video from "react-native-video";
 import Media from "../../assets/";
 import Firebase from "../utils/Firebase";
+import NavigationStyles from "../Navigation";
 
 export default class AllergenPage extends Component {
+  static navigationOptions = ({ navigation }) => {
+    const tag = navigation.getParam("tag", "other");
+    return NavigationStyles[tag];
+  };
+
   constructor(props) {
     super(props);
     this.state = {
+      tag: this.props.navigation.getParam("tag", "other"),
       allergen: this.props.navigation.getParam("allergen", { name: "unknown" }),
       firebase: this.props.navigation.getParam("firebase", null),
       loading: true,
@@ -94,6 +101,7 @@ export default class AllergenPage extends Component {
         value: allergen.allergenicity
       },
       {
+        // TODO: This should be a hyperlink
         label: "Allergenicity Ref",
         value: allergen.allergenicity_ref
       },
@@ -104,19 +112,18 @@ export default class AllergenPage extends Component {
     ];
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{this.state.allergen.name}</Text>
-        <Video
-          source={this.state.videoSrc}
-          ref={ref => {
-            this.player = ref;
-          }}
-          onBuffer={() => console.log("Buffering")}
-          onError={() => this.setState({ error: true })}
-          style={styles.video}
-          repeat={true}
-          muted={true}
-        />
         <ScrollView style={styles.list}>
+          <Video
+            source={this.state.videoSrc}
+            ref={ref => {
+              this.player = ref;
+            }}
+            onBuffer={() => console.log("Buffering")}
+            onError={() => this.setState({ error: true })}
+            style={styles.video}
+            repeat={true}
+            muted={true}
+          />
           {list.map(l => (
             <Card>
               <Text style={styles.label}>{l.label}</Text>
@@ -142,7 +149,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 8,
-    paddingBottom: 8,
+    paddingBottom: 32,
     marginLeft: 16,
     marginRight: 16
   },
