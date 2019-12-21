@@ -110,6 +110,7 @@ export default class AllergenPage extends Component {
         value: allergen.route
       }
     ];
+    // Add poster image to display while loading
     return (
       <View style={styles.container}>
         <ScrollView style={styles.list}>
@@ -123,6 +124,7 @@ export default class AllergenPage extends Component {
             style={styles.video}
             repeat={true}
             muted={true}
+            resizeMode={"contain"}
           />
           {list.map(l => (
             <Card>

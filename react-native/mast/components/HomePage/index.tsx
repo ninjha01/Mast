@@ -106,20 +106,17 @@ export default class HomePage extends Component {
             placeholder="Search Allergens..."
             value={this.state.query}
           />
-          <Text style={styles.title}>{this.state.title}</Text>
           <View style={styles.container}>
             <Image style={styles.icon} source={Media.common.logo} />
           </View>
-          <ScrollView contentContainerStyle={styles.grid}>
-            <FlatList
-              data={buttons}
-              renderItem={({ item }) =>
-                this.renderButton(item.label, item.tag, item.imageSrc)
-              }
-              numColumns={3}
-              keyExtractor={(item, index) => index.toString()}
-            />
-          </ScrollView>
+          <FlatList
+            data={buttons}
+            renderItem={({ item }) =>
+              this.renderButton(item.label, item.tag, item.imageSrc)
+            }
+            numColumns={3}
+            keyExtractor={(item, index) => index.toString()}
+          />
         </View>
       </ImageBackground>
     );

@@ -139,6 +139,8 @@ android {
 }
 
 dependencies {
+    implementation project(':@react-native-firebase_storage')
+    implementation project(':react-native-video')
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation project(':@react-native-firebase_auth')
     implementation project(':@react-native-firebase_app')

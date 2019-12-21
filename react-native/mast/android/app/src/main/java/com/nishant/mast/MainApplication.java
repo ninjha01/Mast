@@ -3,6 +3,8 @@ package com.nishant.mast;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.storage.ReactNativeFirebaseStoragePackage;
+import com.brentvatne.react.ReactVideoPackage;
 import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
@@ -38,6 +40,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactNativeFirebaseStoragePackage(),
+            new ReactVideoPackage(),
             new ReactNativeFirebaseAuthPackage(),
             new ReactNativeFirebaseAppPackage(),
             new ReactNativeFirebaseFirestorePackage(),
