@@ -46,7 +46,6 @@ export default class HomePage extends Component {
   }
 
   submitQuery(query?: string, query_type?: string) {
-    // TODO: pass nav bar styling to search page
     var nextNavigationOptions = NavigationStyles.home_page;
     if (this.state.query_type == "category") {
       nextNavigationOptions = NavigationStyles[this.state.category];
