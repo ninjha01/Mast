@@ -18,7 +18,9 @@ const media = {
     }
   },
   search_page: {},
-  allergen_page: {}
+  allergen_page: {
+    buy_icon: require("./allergen_page/buy_icon.png")
+  }
 };
 
 export default media;

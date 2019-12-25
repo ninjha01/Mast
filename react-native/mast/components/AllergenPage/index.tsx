@@ -1,7 +1,15 @@
 "use strict";
 
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Linking,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView
+} from "react-native";
 import { Card } from "react-native-elements";
 import Video from "react-native-video";
 import Media from "../../assets/";
@@ -27,12 +35,37 @@ export default class AllergenPage extends Component {
 
   componentDidMount() {
     this.populateVideo();
+    this.populateButton();
+  }
+
+  populateButton() {
+    if (this.state.allergen.sold) {
+      // TODO: more sophisticated search
+      const baseUrl =
+        "https://inbio.com/index.php?route=product/search&search=";
+      const url = encodeURI(baseUrl + this.state.allergen.name);
+      this.setState({
+        buy_btn: (
+          <TouchableOpacity
+            style={styles.button}
+            activeOpacity={0.5}
+            onPress={() => {
+              Linking.openURL(url);
+            }}
+          >
+            <Image
+              source={Media.allergen_page.buy_icon}
+              style={styles.button}
+            />
+          </TouchableOpacity>
+        )
+      });
+    }
   }
 
   populateVideo() {
     this.setState({ loading: true });
     const allergen = this.state.allergen;
-    console.log(allergen.pdb_id);
     if (allergen.pdb_id) {
       this.state.firebase
         .getURLByName(allergen.pdb_id + ".mp4")
@@ -53,14 +86,6 @@ export default class AllergenPage extends Component {
     }
   }
 
-  renderRow(label, value) {
-    return (
-      <Card>
-        <Text>Hello World</Text>
-      </Card>
-    );
-  }
-
   render() {
     //TODO: gracefully handle errors
     if (this.state.error) {
@@ -71,6 +96,7 @@ export default class AllergenPage extends Component {
     }
 
     const allergen = this.state.allergen;
+    console.log("allergen", allergen);
     const list = [
       {
         label: "Name",
@@ -110,6 +136,7 @@ export default class AllergenPage extends Component {
         value: allergen.route
       }
     ];
+
     // TODO: Add poster image to display while loading
     return (
       <View style={styles.container}>
@@ -121,13 +148,15 @@ export default class AllergenPage extends Component {
             }}
             onBuffer={() => console.log("Buffering")}
             onError={() => this.setState({ error: true })}
+            resizeMode="contain"
             style={styles.video}
             repeat={true}
             muted={true}
             resizeMode={"contain"}
           />
-          {list.map(l => (
-            <Card>
+          {this.state.buy_btn}
+          {list.map((l, i) => (
+            <Card key={i}>
               <Text style={styles.label}>{l.label}</Text>
               <Text style={styles.value}>{l.value}</Text>
             </Card>
@@ -174,5 +203,11 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     width: "100%",
     backgroundColor: "white"
+  },
+  button: {
+    alignItems: "flex-end",
+    resizeMode: "contain",
+    height: 32,
+    paddingBottom: 8
   }
 });

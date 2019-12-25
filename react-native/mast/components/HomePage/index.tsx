@@ -52,7 +52,6 @@ export default class HomePage extends Component {
     } else {
       nextNavigationOptions["title"] = "Search: " + this.state.query;
     }
-    console.log(this.state.query, nextNavigationOptions);
     this.props.navigation.navigate("Search", {
       query: this.state.query,
       query_type: this.state.query_type,
