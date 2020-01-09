@@ -1,4 +1,4 @@
-package com.nishant.mast;
+package com.indoor.mast;
 
 import android.app.Application;
 
@@ -12,7 +12,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.nishant.mast.generated.BasePackageList;
+import com.indoor.mast.generated.BasePackageList;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.rnscreens.RNScreensPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
