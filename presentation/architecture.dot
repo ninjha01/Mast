@@ -39,7 +39,7 @@ digraph mast_architecture {
 	}
 
 	subgraph cluster_releases {
-		{rank=same dev_users internal_users external_users asset_backend}
+		{rank=same dev_users internal_users external_users}
 		label="Releases"
 	}
 
