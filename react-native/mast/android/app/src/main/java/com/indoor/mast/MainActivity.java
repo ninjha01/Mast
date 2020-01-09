@@ -1,4 +1,4 @@
-package com.nishant.mast;
+package com.indoor.mast;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

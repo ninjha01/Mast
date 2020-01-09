@@ -1,4 +1,4 @@
-package com.nishant.mast.generated;
+package com.indoor.mast.generated;
 
 import java.util.Arrays;
 import java.util.List;
