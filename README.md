@@ -10,13 +10,14 @@ Android Status:
 
 # Todo
 
-- [ ] Add Video to Allergen Page
-  - [ ] Set up Firebase Storage
-  - [ ] Add UI elements
+[ ] Create Loading animation/Video
+[ ] Display while Video is Loading
+[ ] Create No Internet connection modal
+[ ] Display when not connected
 
-- [x] write ffmpeg script
-- [x] scrub firebase secret
-- [x] set firebase access rules
+- [x] Add Video to Allergen Page
+  - [x] Set up Firebase Storage
+  - [x] Add UI elements
 
 # Setup DB build
 
