@@ -1,10 +1,12 @@
 "use strict";
 
 import React, { Component } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator } from "react-native";
 import { Card, ListItem } from "react-native-elements";
-import Firebase from "../utils/Firebase";
-import NavigationStyles from "../Navigation";
+import styles from "../common/Styles";
+import NavigationStyles from "../common/Navigation";
+import Colors from "../common/Colors";
+import Firebase from "../common/Firebase";
 
 export default class SearchPage extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -40,20 +42,33 @@ export default class SearchPage extends Component {
         });
       });
   }
-  p;
 
   render() {
     if (this.state.error) {
-      return <Text style={styles.title}>this.state.error</Text>;
+      return (
+        <View styles={styles.container}>
+          <Text style={styles.error}>
+            Something went wrong. Check your internet connection.
+          </Text>
+        </View>
+      );
     }
     if (this.state.loading) {
-      return <Text style={styles.title}>Loading</Text>;
+      return (
+        <View styles={styles.container}>
+          <Text style={styles.loading}>Loading...</Text>
+          <ActivityIndicator
+            size="large"
+            color={Colors.allergen_guru.main_color}
+          />
+        </View>
+      );
     }
     var allergens = this.state.allergens;
     if (allergens.length > 0) {
       var allergenList = allergens.map((a, i) => {
         return (
-          <Card key={i} style={styles.card}>
+          <Card key={i} style={styles.search_card}>
             <ListItem
               key={i}
               title={a.name}
@@ -69,7 +84,9 @@ export default class SearchPage extends Component {
         );
       });
     } else {
-      allergenList = <Text style={styles.item}> No Allergens Found </Text>;
+      allergenList = (
+        <Text style={styles.search_title}> No Allergens Found </Text>
+      );
     }
     return (
       <View style={{ flex: 1 }}>
@@ -78,23 +95,3 @@ export default class SearchPage extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 18,
-    textAlign: "center",
-    marginTop: 65
-  },
-  container: {
-    flex: 1,
-    marginTop: 65,
-    marginBottom: 65,
-    paddingTop: 22,
-    paddingBottom: 22,
-    marginLeft: 16,
-    marginRight: 16
-  },
-  card: {
-    padding: 0
-  }
-});

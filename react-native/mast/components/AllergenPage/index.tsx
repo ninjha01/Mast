@@ -13,8 +13,8 @@ import {
 import { Card } from "react-native-elements";
 import Video from "react-native-video";
 import Media from "../../assets/";
-import Firebase from "../utils/Firebase";
-import NavigationStyles from "../Navigation";
+import Firebase from "../common/Firebase";
+import NavigationStyles from "../common/Navigation";
 
 export default class AllergenPage extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -168,15 +168,6 @@ export default class AllergenPage extends Component {
 }
 
 const styles = StyleSheet.create({
-  error: {
-    flex: 1,
-    color: "red"
-  },
-  title: {
-    fontSize: 32,
-    textAlign: "center",
-    marginTop: 16
-  },
   container: {
     flex: 1,
     paddingTop: 8,
@@ -195,9 +186,6 @@ const styles = StyleSheet.create({
   },
   value: {
     fontWeight: "300"
-  },
-  card: {
-    padding: 0
   },
   video: {
     aspectRatio: 1,
