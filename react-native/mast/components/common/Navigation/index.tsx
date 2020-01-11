@@ -4,7 +4,7 @@ const navigationStyles = {
   home_page: {
     title: "AllergenGuru",
     headerStyle: {
-      backgroundcolor: Colors.allergen_guru
+      backgroundcolor: Colors.allergen_guru.main_color
     },
     headertitlestyle: {
       fontweight: "bold",
@@ -14,7 +14,7 @@ const navigationStyles = {
   animal: {
     title: "animal",
     headerstyle: {
-      backgroundcolor: Colors.animal
+      backgroundcolor: Colors.animal.main_color
     },
     headertitlestyle: {
       fontweight: "bold",
@@ -24,7 +24,7 @@ const navigationStyles = {
   cockroach: {
     title: "cockroach",
     headerstyle: {
-      backgroundcolor: Colors.cockroach
+      backgroundcolor: Colors.cockroach.main_color
     },
     headertitlestyle: {
       fontweight: "bold",
@@ -34,7 +34,7 @@ const navigationStyles = {
   food: {
     title: "food",
     headerstyle: {
-      backgroundcolor: Colors.food
+      backgroundcolor: Colors.food.main_color
     },
     headertitlestyle: {
       fontweight: "bold",
@@ -44,7 +44,7 @@ const navigationStyles = {
   house_dust_mite: {
     title: "house dust mite",
     headerstyle: {
-      backgroundcolor: Colors.house_dust_mite
+      backgroundcolor: Colors.house_dust_mite.main_color
     },
     headertitlestyle: {
       fontweight: "bold",
@@ -53,7 +53,7 @@ const navigationStyles = {
   },
   latex: {
     title: "latex",
-    headerstyle: Colors.latex,
+    headerstyle: Colors.latex.main_color,
     backgroundcolor: "#64a0cd",
     headertitlestyle: {
       fontweight: "bold",
@@ -62,7 +62,7 @@ const navigationStyles = {
   },
   venom: {
     title: "venom",
-    headerstyle: Colors.venom,
+    headerstyle: Colors.venom.main_color,
     backgroundcolor: "#ffb428",
     headertitlestyle: {
       fontweight: "bold",
@@ -71,7 +71,7 @@ const navigationStyles = {
   },
   pollen: {
     title: "pollen",
-    headerStyle: Colors.Pollen,
+    headerStyle: Colors.Pollen.main_color,
     backgroundColor: "#f0b43c",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -80,7 +80,7 @@ const navigationStyles = {
   },
   mold: {
     title: "Mold",
-    headerstyle: Colors.mold,
+    headerstyle: Colors.mold.main_color,
     backgroundColor: "#8c962d",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -89,7 +89,7 @@ const navigationStyles = {
   },
   other: {
     title: "Other",
-    headerstyle: Colors.other,
+    headerstyle: Colors.other.main_color,
     backgroundColor: "#5f64cd",
     headerTitleStyle: {
       fontWeight: "bold",
