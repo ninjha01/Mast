@@ -19,6 +19,15 @@ Android Status:
   - [x] Set up Firebase Storage
   - [x] Add UI elements
 
+# Build docker image
+
+```
+docker build https://github.com/ninjha01/mast.git#master
+docker tag 5d110b40b972 mast_image
+docker run -d  -it --name mast_pipeline -v "$(pwd)":/app mast_image;
+docker exec -it mast_pipeline bash
+```
+
 # Setup DB build
 
 ```
