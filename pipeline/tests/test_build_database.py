@@ -1,6 +1,4 @@
-from build_database import parse_allergen_page, get_metadata_from_csv
-import uuid
-from firebase import firestore
+from database.build_database import parse_allergen_page, get_metadata_from_csv
 
 
 def test_parse_allergen_page():
@@ -22,19 +20,11 @@ def test_parse_allergen_page():
 
 def test_get_metadata_from_csv():
     name = "Der p 10"
-    sold_filename = "sold.csv"
+    # TODO: Refactor tests to take locations of files
+    sold_filename = "./pipeline/database/sold.csv"
     assert get_metadata_from_csv(name, sold_filename) is True
-    categories_filename = "categories.csv"
+    categories_filename = "./pipeline/database/categories.csv"
     assert get_metadata_from_csv(name, categories_filename) == "House Dust Mite"
     name = "Mala s 13"
-    pdbs_filename = "pdbs.csv"
+    pdbs_filename = "./pipeline/database/pdbs.csv"
     assert get_metadata_from_csv(name, pdbs_filename) == "2j23"
-
-
-def test_write_firestore():
-    store = firestore.client()
-    rand_id = str(uuid.uuid4())
-    rand_val = {"test_val": str(uuid.uuid4())}
-    rand_doc = store.collection("test").document(rand_id)
-    rand_doc.set(rand_val)
-    assert rand_doc.get().to_dict() == rand_val

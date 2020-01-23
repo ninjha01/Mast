@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup as bs
 from multiprocessing import Pool
 import multiprocessing as mp
 import time
-from firebase import firestore
 
 
 def main():
@@ -47,6 +46,8 @@ def write_database(data, db_filename):
 
 
 def upload_to_firebase(dataset, collection_name):
+    from firebase import firestore
+
     store = firestore.client()
     for d in dataset:
         store.collection(collection_name).document(d["name"]).set(d)
