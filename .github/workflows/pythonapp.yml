@@ -30,7 +30,3 @@ jobs:
       run: |
         pip install pytest
         pytest
-    - name: Build database
-      run: |
-        cd ./pipeline/database
-        python build_database.py
