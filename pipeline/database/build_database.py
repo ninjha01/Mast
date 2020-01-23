@@ -46,7 +46,7 @@ def write_database(data, db_filename):
 
 
 def upload_to_firebase(dataset, collection_name):
-    from firebase import firestore
+    from pipeline.database.firebase import firestore
 
     store = firestore.client()
     for d in dataset:
@@ -63,9 +63,15 @@ def parse_allergen(a_id):
     entry = parse_allergen_page(url)
     if entry is not None:
         metadata = {
-            "pdb_id": get_metadata_from_csv(entry["name"], "pdbs.csv"),
-            "sold": get_metadata_from_csv(entry["name"], "sold.csv"),
-            "category": get_metadata_from_csv(entry["name"], "categories.csv"),
+            "pdb_id": get_metadata_from_csv(
+                entry["name"], "./pipeline/database/pdbs.csv"
+            ),
+            "sold": get_metadata_from_csv(
+                entry["name"], "./pipeline/database/sold.csv"
+            ),
+            "category": get_metadata_from_csv(
+                entry["name"], "./pipeline/database/categories.csv"
+            ),
         }
         entry.update(metadata)
         print(f'a_id: {a_id}, name: {entry["name"]} completed')
