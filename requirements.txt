@@ -44,7 +44,6 @@ pandas==0.25.3
 parso==0.5.1
 pathspec==0.6.0
 Pillow==6.2.0
--e git+git@github.com:ninjha01/mast.git@97a1aa6ebfa84cb524b4a4801ebe2044d3634e6b#egg=pipeline&subdirectory=pipeline
 pluggy==0.13.1
 pre-commit==1.20.0
 progress==1.5
