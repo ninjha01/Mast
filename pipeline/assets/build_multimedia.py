@@ -68,6 +68,7 @@ def gen_frames(pdb):
     cmd.show_as("cartoon")
     cmd.color("marine")
     cmd.set("opaque_background", 0)
+    cmd.bg_color("white")
     cmd.mset("1 x90")
     cmd.util.mroll(1, 90, 1)
     frame_folder_path = "./frames/" + pdb + "/"
