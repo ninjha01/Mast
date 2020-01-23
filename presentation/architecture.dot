@@ -1,25 +1,64 @@
 digraph mast_architecture {
-	rankdir=RL;
-
-	// Source Data
-	node[fillcolor="red" style="filled" fontcolor="white"];
-	db_source[label="Allergen.org"]
-	pdb_source[label="Protein Data Bank"]
-	metadata_source[label="InBio"]
-
-	// Storage - #303F9F (dark blue)
-	node[fillcolor="#303F9F" style="filled" fontcolor="white"];
-	database[label="Firebase/Firestore"];
-	object_store[label="Firebase/Storage"];
+	rankdir=LR
+	compound=true
 	
-	// Client-side Apps - #FFEB3B (yellow)
-	node[fillcolor="#FFEB3B" style="filled" fontcolor="black"];
-	mobile_app[label="iOS/Android app"];
-	
-	db_source -> database;
-	metadata_source -> database;
-	pdb_source -> object_store;
-	database -> mobile_app;
-	object_store -> mobile_app;
+	node[shape=box fillcolor="white" Style="Filled" Fontcolor="black"]
 
+	// Repo
+	master[label="branch: master"]
+	staging[label="branch: staging"]
+	internal[label="branch: internal"]
+	external[label="branch: external"]
+
+	// Build Step
+	build_app[label="Microsoft App Center"]
+
+	// Distribute Step
+	ios_store[label="Apple App Store"]
+	android_store[label="Google Play Store"]
+
+	// Releases
+	dev_users[label="Developers"]
+	internal_users[label="Inbio Internal"]
+	external_users[label="Public Release"]
+
+	
+	subgraph cluster_git_repo {
+		{rank=same master staging internal external}
+		label="GitHub"
+	}
+
+	subgraph cluster_build_steps {
+		label="Build Step"
+		build_app
+	}
+
+	subgraph cluster_distribute_steps {
+		label="Distribute Steps"
+		ios_store android_store
+	}
+
+	subgraph cluster_releases {
+		{rank=same dev_users internal_users external_users}
+		label="Releases"
+	}
+
+	//Master path
+	master -> build_app 
+	build_app -> dev_users
+
+	//Staging path
+	staging -> build_app [color="blue"]
+	build_app -> ios_store [color="blue" lhead=cluster_distribute_steps weight=10]
+	ios_store -> dev_users [color="blue" ltail=cluster_distribute_steps weight=10]
+
+	//Internal path
+	internal -> build_app [color="green"]
+	build_app -> ios_store [color="green" lhead=cluster_distribute_steps weight=10]
+	ios_store -> internal_users [color="green" ltail=cluster_distribute_steps weight=10]
+
+	//External path
+	external -> build_app [color="red"]
+	build_app -> ios_store [color="red" lhead=cluster_distribute_steps weight=10]
+	ios_store -> external_users [color="red" ltail=cluster_distribute_steps weight=10]
 }

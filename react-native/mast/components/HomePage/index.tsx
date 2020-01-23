@@ -14,8 +14,9 @@ import {
 } from "react-native";
 import { SearchBar } from "react-native-elements";
 import Media from "../../assets/";
-import Firebase from "../utils/Firebase";
-import NavigationStyles from "../Navigation";
+import Firebase from "../common/Firebase";
+import styles from "../common/Styles";
+import NavigationStyles from "../common/Navigation";
 
 export default class HomePage extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -73,12 +74,12 @@ export default class HomePage extends Component {
   renderButton(label: string, tag: string, src: string) {
     return (
       <TouchableOpacity
-        style={styles.button}
+        style={styles.home_button}
         activeOpacity={0.5}
         onPress={() => this.buttonPressed(label, tag)}
       >
-        <Image source={src} style={styles.icon} />
-        <Text style={styles.label}>{label}</Text>
+        <Image source={src} style={styles.home_icon} />
+        <Text style={styles.home_icon_label}>{label}</Text>
       </TouchableOpacity>
     );
   }
@@ -105,7 +106,7 @@ export default class HomePage extends Component {
             value={this.state.query}
           />
           <View style={styles.container}>
-            <Image style={styles.icon} source={Media.common.logo} />
+            <Image style={styles.home_icon} source={Media.common.logo} />
           </View>
           <FlatList
             data={buttons}
@@ -120,47 +121,6 @@ export default class HomePage extends Component {
     );
   }
 }
-
-const width = Dimensions.get("window").width;
-const height = Dimensions.get("window").height;
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 18,
-    textAlign: "center",
-    marginTop: 30
-  },
-  container: {
-    flex: 1,
-    padding: 32,
-    alignItems: "center"
-  },
-  search: {
-    marginTop: 16
-  },
-  icon: {
-    height: 0.1 * height,
-    resizeMode: "contain",
-    alignItems: "center",
-    padding: 8
-  },
-  label: {
-    fontSize: 0.038 * width,
-    fontWeight: "bold",
-    textAlign: "center",
-    padding: 8,
-    color: "white"
-  },
-  button: {
-    flex: 1,
-    alignItems: "center",
-    padding: 8
-  },
-  grid: {
-    paddingLeft: 32,
-    paddingRight: 32,
-    height: 0.5 * height
-  }
-});
 
 const buttons = [
   {
