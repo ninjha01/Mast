@@ -20,7 +20,7 @@ import NavigationStyles from "../common/Navigation";
 
 export default class HomePage extends Component {
   static navigationOptions = ({ navigation }) => {
-    return NavigationStyles.home_page;
+    return NavigationStyles.home_page(navigation);
   };
 
   constructor(props) {

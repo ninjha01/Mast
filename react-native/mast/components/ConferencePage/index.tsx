@@ -5,9 +5,9 @@ import { View, Text } from "react-native";
 import styles from "../common/Styles";
 import NavigationStyles from "../common/Navigation";
 
-export default class HomePage extends Component {
+export default class ConferencePage extends Component {
   static navigationOptions = ({ navigation }) => {
-    return NavigationStyles.home_page;
+    return NavigationStyles.conference_page(navigation);
   };
 
   constructor(props) {

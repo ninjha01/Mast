@@ -30,6 +30,13 @@ const styles = StyleSheet.create({
     padding: 32,
     color: "grey"
   },
+  menu_left: {
+    marginLeft: 16
+  },
+  menu_icon: {
+    flex: 1,
+    color: "white"
+  },
   // HomePage
   search_bar: {
     marginTop: 16
