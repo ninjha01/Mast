@@ -26,8 +26,9 @@ export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // Category is defined when searching for a category, Query is used for arbitrary strings,
+      // Query is used for arbitrary strings,
       query: "",
+      // Category is defined when searching for a category
       category: "",
       query_type: "",
       firebase: new Firebase()
