@@ -4,68 +4,68 @@ const navigationStyles = {
   home_page: {
     title: "AllergenGuru",
     headerStyle: {
-      backgroundcolor: Colors.allergen_guru.main_color
+      backgroundColor: Colors.allergen_guru.main_color
     },
-    headertitlestyle: {
-      fontweight: "bold",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
   animal: {
     title: "animal",
-    headerstyle: {
-      backgroundcolor: Colors.animal.main_color
+    headerStyle: {
+      backgroundColor: Colors.animal.main_color
     },
-    headertitlestyle: {
-      fontweight: "bold",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
   cockroach: {
     title: "cockroach",
-    headerstyle: {
-      backgroundcolor: Colors.cockroach.main_color
+    headerStyle: {
+      backgroundColor: Colors.cockroach.main_color
     },
-    headertitlestyle: {
-      fontweight: "bold",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
   food: {
     title: "food",
-    headerstyle: {
-      backgroundcolor: Colors.food.main_color
+    headerStyle: {
+      backgroundColor: Colors.food.main_color
     },
-    headertitlestyle: {
-      fontweight: "bold",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
   house_dust_mite: {
     title: "house dust mite",
-    headerstyle: {
-      backgroundcolor: Colors.house_dust_mite.main_color
+    headerStyle: {
+      backgroundColor: Colors.house_dust_mite.main_color
     },
-    headertitlestyle: {
-      fontweight: "bold",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
   latex: {
     title: "latex",
-    headerstyle: Colors.latex.main_color,
-    backgroundcolor: "#64a0cd",
-    headertitlestyle: {
-      fontweight: "bold",
+    headerStyle: Colors.latex.main_color,
+    backgroundColor: "#64a0cd",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
   venom: {
     title: "venom",
-    headerstyle: Colors.venom.main_color,
-    backgroundcolor: "#ffb428",
-    headertitlestyle: {
-      fontweight: "bold",
+    headerStyle: Colors.venom.main_color,
+    backgroundColor: "#ffb428",
+    headerTitleStyle: {
+      fontWeight: "bold",
       color: "white"
     }
   },
@@ -80,7 +80,7 @@ const navigationStyles = {
   },
   mold: {
     title: "Mold",
-    headerstyle: Colors.mold.main_color,
+    headerStyle: Colors.mold.main_color,
     backgroundColor: "#8c962d",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -89,7 +89,7 @@ const navigationStyles = {
   },
   other: {
     title: "Other",
-    headerstyle: Colors.other.main_color,
+    headerStyle: Colors.other.main_color,
     backgroundColor: "#5f64cd",
     headerTitleStyle: {
       fontWeight: "bold",
