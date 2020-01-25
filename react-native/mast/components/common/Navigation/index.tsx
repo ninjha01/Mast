@@ -71,7 +71,7 @@ const navigationStyles = {
   },
   pollen: {
     title: "pollen",
-    headerStyle: Colors.Pollen.main_color,
+    headerStyle: Colors.pollen.main_color,
     backgroundColor: "#f0b43c",
     headerTitleStyle: {
       fontWeight: "bold",
