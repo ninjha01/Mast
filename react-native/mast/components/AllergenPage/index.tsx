@@ -15,6 +15,7 @@ import Video from "react-native-video";
 import Media from "../../assets/";
 import Firebase from "../common/Firebase";
 import NavigationStyles from "../common/Navigation";
+import styles from "../common/Styles";
 
 export default class AllergenPage extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -47,7 +48,7 @@ export default class AllergenPage extends Component {
       this.setState({
         buy_btn: (
           <TouchableOpacity
-            style={styles.button}
+            style={styles.buy_button}
             activeOpacity={0.5}
             onPress={() => {
               Linking.openURL(url);
@@ -55,7 +56,7 @@ export default class AllergenPage extends Component {
           >
             <Image
               source={Media.allergen_page.buy_icon}
-              style={styles.button}
+              style={styles.buy_button}
             />
           </TouchableOpacity>
         )
@@ -160,42 +161,11 @@ export default class AllergenPage extends Component {
               <Text style={styles.value}>{l.value}</Text>
             </Card>
           ))}
-          <Text>Data sourced from the IUIS Allergen Nomenclature Database</Text>
+          <Text style={styles.citation}>
+            Data sourced from the IUIS Allergen Nomenclature Database
+          </Text>
         </ScrollView>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 8,
-    paddingBottom: 32,
-    marginLeft: 16,
-    marginRight: 16
-  },
-  list: {
-    marginTop: 8,
-    marginBottom: 8,
-    marginLeft: 16,
-    marginRight: 16
-  },
-  label: {
-    fontWeight: "bold"
-  },
-  value: {
-    fontWeight: "300"
-  },
-  video: {
-    aspectRatio: 1,
-    width: "100%",
-    backgroundColor: "white"
-  },
-  button: {
-    alignItems: "flex-end",
-    resizeMode: "contain",
-    height: 32,
-    paddingBottom: 8
-  }
-});

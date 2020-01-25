@@ -12,7 +12,7 @@ const navigationStyles = {
     }
   },
   animal: {
-    title: "animal",
+    title: "Animal",
     headerStyle: {
       backgroundColor: Colors.animal.main_color
     },
@@ -22,7 +22,7 @@ const navigationStyles = {
     }
   },
   cockroach: {
-    title: "cockroach",
+    title: "Cockroach",
     headerStyle: {
       backgroundColor: Colors.cockroach.main_color
     },
@@ -32,7 +32,7 @@ const navigationStyles = {
     }
   },
   food: {
-    title: "food",
+    title: "Dood",
     headerStyle: {
       backgroundColor: Colors.food.main_color
     },
@@ -42,7 +42,7 @@ const navigationStyles = {
     }
   },
   house_dust_mite: {
-    title: "house dust mite",
+    title: "House Dust Mite",
     headerStyle: {
       backgroundColor: Colors.house_dust_mite.main_color
     },
@@ -52,7 +52,7 @@ const navigationStyles = {
     }
   },
   latex: {
-    title: "latex",
+    title: "Latex",
     headerStyle: Colors.latex.main_color,
     backgroundColor: "#64a0cd",
     headerTitleStyle: {
@@ -61,7 +61,7 @@ const navigationStyles = {
     }
   },
   venom: {
-    title: "venom",
+    title: "Venom",
     headerStyle: Colors.venom.main_color,
     backgroundColor: "#ffb428",
     headerTitleStyle: {
@@ -70,7 +70,7 @@ const navigationStyles = {
     }
   },
   pollen: {
-    title: "pollen",
+    title: "Pollen",
     headerStyle: Colors.pollen.main_color,
     backgroundColor: "#f0b43c",
     headerTitleStyle: {

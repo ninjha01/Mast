@@ -66,6 +66,35 @@ const styles = StyleSheet.create({
     paddingBottom: 22,
     marginLeft: 16,
     marginRight: 16
+  },
+  // AllergenPage
+  citation: {
+    flex: 1,
+    color: "grey",
+    padding: 32
+  },
+  list: {
+    marginTop: 8,
+    marginBottom: 8,
+    marginLeft: 16,
+    marginRight: 16
+  },
+  label: {
+    fontWeight: "bold"
+  },
+  value: {
+    fontWeight: "300"
+  },
+  video: {
+    aspectRatio: 1,
+    width: "100%",
+    backgroundColor: "white"
+  },
+  buy_button: {
+    alignItems: "flex-end",
+    resizeMode: "contain",
+    height: 32,
+    paddingBottom: 8
   }
 });
 
