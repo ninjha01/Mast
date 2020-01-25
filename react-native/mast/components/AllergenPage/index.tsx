@@ -127,7 +127,6 @@ export default class AllergenPage extends Component {
         value: allergen.allergenicity
       },
       {
-        // TODO: This should be a hyperlink
         label: "Allergenicity Ref",
         value: allergen.allergenicity_ref
       },
@@ -161,6 +160,7 @@ export default class AllergenPage extends Component {
               <Text style={styles.value}>{l.value}</Text>
             </Card>
           ))}
+          <Text>Data sourced from the IUIS Allergen Nomenclature Database</Text>
         </ScrollView>
       </View>
     );
