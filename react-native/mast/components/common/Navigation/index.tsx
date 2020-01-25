@@ -9,7 +9,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   animal: {
     title: "Animal",
@@ -19,7 +20,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   cockroach: {
     title: "Cockroach",
@@ -29,17 +31,19 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   food: {
-    title: "Dood",
+    title: "Food",
     headerStyle: {
       backgroundColor: Colors.food.main_color
     },
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   house_dust_mite: {
     title: "House Dust Mite",
@@ -49,7 +53,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   latex: {
     title: "Latex",
@@ -58,7 +63,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   venom: {
     title: "Venom",
@@ -67,7 +73,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   pollen: {
     title: "Pollen",
@@ -76,7 +83,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   mold: {
     title: "Mold",
@@ -85,7 +93,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   },
   other: {
     title: "Other",
@@ -94,7 +103,8 @@ const navigationStyles = {
     headerTitleStyle: {
       fontWeight: "bold",
       color: "white"
-    }
+    },
+    headerTintColor: "white"
   }
 };
 
