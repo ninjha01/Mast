@@ -5,12 +5,6 @@ def build_db():
 
 
 def build_assets():
-    import assets.build as assets_build
+    import assets.assets as assets
 
-    assets_build.main()
-
-
-def build_movies():
-    import assets.movies as assets_movies
-
-    assets_movies.main()
+    assets.main()

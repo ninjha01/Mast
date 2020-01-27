@@ -25,6 +25,7 @@ def main():
         if not os.path.exists(frame_folder_path):
             os.makedirs(frame_folder_path)
         gen_frames(pdb)
+        gen_mp4(pdb)
     bar.finish()
 
 
@@ -97,6 +98,29 @@ def gen_frames(pdb):
     # cmd.save(dae_filename)
     # while not os.path.exists(dae_filename):
     #     time.sleep(0.1)
+
+
+def gen_mp4(pdb):
+    if not os.path.exists("./output"):
+        os.makedirs("./output")
+
+    frame_source = "./frames/" + pdb + "/frame%04d.png"
+    out_filename = f"./output/{pdb}.mp4"
+    command = [
+        "ffmpeg",
+        "-i",
+        frame_source,
+        "-c:v",
+        "libx264",
+        "-vf",
+        "fps=25",
+        "-pix_fmt",
+        "yuv420p",
+        out_filename,
+    ]
+    run_command(command)
+    if not os.path.exists(out_filename):
+        raise ValueError("Failure")
 
 
 ########################################################################
