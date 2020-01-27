@@ -1,4 +1,4 @@
-from database.build_database import parse_allergen_page, get_metadata_from_csv
+from database.database import parse_allergen_page, get_metadata_from_csv
 
 
 def test_parse_allergen_page():
