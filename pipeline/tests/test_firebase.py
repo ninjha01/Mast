@@ -5,7 +5,7 @@ import pytest
 @pytest.mark.needs_auth
 def test_write_firestore():
     # HACK: Moving import here to pass cicd test suite
-    from database.firebase import firestore
+    from firebase import firestore
 
     store = firestore.client()
     rand_id = str(uuid.uuid4())

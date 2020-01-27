@@ -58,7 +58,7 @@ def download_pdbs(list):
         if not os.path.exists(unzipped_filename):  # Fallback to regular pdb
             base_url = "https://files.rcsb.org/download/$p.pdb"
             url = base_url.replace("$p", pdb)
-            filename = "./pdbs/n" + pdb + ".pdb.gz"
+            filename = "./pdbs/n" + pdb + ".pdb"
             download_file(url, filename)
         bar.next()
     bar.finish()
