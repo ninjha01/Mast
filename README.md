@@ -17,6 +17,14 @@ docker run -d  -it --name mast_pipeline -v "$(pwd)":/app mast_image;
 docker exec -it mast_pipeline bash
 ```
 
+# Start stop docker image
+
+```
+docker stop
+docker start mast_pipeline
+docker exec -it mast_pipeline bash
+```
+
 # Setup DB build
 
 ```

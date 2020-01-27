@@ -46,15 +46,29 @@ def download_pdbs(list):
     bar = Bar("Downloading", max=len(list))
     for pdb in list:
         pdb = pdb.lower()
-        base_command = ["wget", "-q", "-O"]
-        base_url = "https://files.rcsb.org/download/$p.pdb"
+        # Get bioassembly 1 (individual unit rather than larger complex)
+        base_url = "https://files.rcsb.org/download/$p.pdb1.gz"
         url = base_url.replace("$p", pdb)
-        filename = "./pdbs/n" + pdb + ".pdb"
-        command = base_command + [filename, url]
-        run_command(command)
+        filename = "./pdbs/n" + pdb + ".pdb.gz"
+        download_file(url, filename)
+        unzip_command = ["gunzip", filename]
+        run_command(unzip_command)
+        unzipped_filename = filename.replace(".gz", "")
+        time.sleep(0.1)
+        if not os.path.exists(unzipped_filename):  # Fallback to regular pdb
+            base_url = "https://files.rcsb.org/download/$p.pdb"
+            url = base_url.replace("$p", pdb)
+            filename = "./pdbs/n" + pdb + ".pdb.gz"
+            download_file(url, filename)
         bar.next()
     bar.finish()
     return True
+
+
+def download_file(url, filename):
+    base_command = ["wget", "-q", "-O"]
+    download_command = base_command + [filename, url]
+    run_command(download_command)
 
 
 ########################################################################
