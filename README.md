@@ -81,3 +81,36 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 into `~/.bash_profile`
 
 `source ~/.bash_profile`
+
+# Deployment
+
+Internal release notes template:
+
+```
+Thank you for being a part of the AllergenGuru Internal Beta program!
+
+Here's what's new:
+
+Navigation:
+ - To lay the foundation for new and exciting features, the main screen now has a menu!
+   Currently it navigates between the home page and an info page about the Innovations in Allergy Conference.
+   Watch this space for more developments!
+
+3D Structure:
+ - Biological Assembly 1 is now used by default. Two may be better than one, but displaying monomers improves clarity.
+ - Fixed duplicates
+ - Fixed missing structure (Der p 23)
+ - Styling changes to make viewing structures easy on the eyes
+
+Allergen Page:
+ - Added IUIS citation
+ - Minor styling improvements
+
+Dev QoL Improvements:
+ - Added CICD for pipeline via Github Actions
+ - Added linting(flake8) and testing (pytest) to pipeline builds
+ - Consolidated/Modularized asset build and db build
+   - Module imports now much easier
+ - Security patch for mem and pycryptodome
+
+```

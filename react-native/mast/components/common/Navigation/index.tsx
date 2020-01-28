@@ -84,7 +84,9 @@ const navigationStyles = {
   },
   latex: {
     title: "Latex",
-    headerStyle: Colors.latex.main_color,
+    headerStyle: {
+      backgroundColor: Colors.latex.main_color
+    },
     backgroundColor: "#64a0cd",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -94,7 +96,9 @@ const navigationStyles = {
   },
   venom: {
     title: "Venom",
-    headerStyle: Colors.venom.main_color,
+    headerStyle: {
+      backgroundColor: Colors.venom.main_color
+    },
     backgroundColor: "#ffb428",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -104,7 +108,9 @@ const navigationStyles = {
   },
   pollen: {
     title: "Pollen",
-    headerStyle: Colors.pollen.main_color,
+    headerStyle: {
+      backgroundColor: Colors.pollen.main_color
+    },
     backgroundColor: "#f0b43c",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -114,7 +120,9 @@ const navigationStyles = {
   },
   mold: {
     title: "Mold",
-    headerStyle: Colors.mold.main_color,
+    headerStyle: {
+      backgroundColor: Colors.mold.main_color
+    },
     backgroundColor: "#8c962d",
     headerTitleStyle: {
       fontWeight: "bold",
@@ -124,7 +132,9 @@ const navigationStyles = {
   },
   other: {
     title: "Other",
-    headerStyle: Colors.other.main_color,
+    headerStyle: {
+      backgroundColor: Colors.other.main_color
+    },
     backgroundColor: "#5f64cd",
     headerTitleStyle: {
       fontWeight: "bold",
