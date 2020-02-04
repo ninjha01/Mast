@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "318389768634",
+    "firebase_url": "https://mast-b0959.firebaseio.com",
+    "project_id": "mast-b0959",
+    "storage_bucket": "mast-b0959.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318389768634:android:220d2991ffa535ff0a4d83",
+        "android_client_info": {
+          "package_name": "com.indoor.mast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318389768634-iik3p2k46q1pdep2otm4ialsn76pp583.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJezyGqQVrICkujvbGx0SuMWb_dVR1OmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318389768634-iik3p2k46q1pdep2otm4ialsn76pp583.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "318389768634-04citnpupi78ala9aj3nitqs5pkeeu0q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "indoor.biotechnologies.mast",
+                "app_store_id": "1373922308"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

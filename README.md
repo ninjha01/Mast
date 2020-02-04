@@ -33,7 +33,6 @@ source activate mast
 pip install -r requirements.txt
 pre-commit install
 ```
-
 # Set up react native
 
 ## Common
@@ -81,6 +80,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 into `~/.bash_profile`
 
 `source ~/.bash_profile`
+<<<<<<< HEAD
 
 # Deployment
 
