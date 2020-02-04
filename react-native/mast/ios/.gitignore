@@ -24,10 +24,6 @@
 #*.lock
 
 
-# ios/Pods,
-Pods/
-
-
 
 #
 # profile - REMOVED temporarily (on double-checking, I can't find it in OS X docs?)
