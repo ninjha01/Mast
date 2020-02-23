@@ -1,272 +1,272 @@
-Aca f,Pollen
-Aca s,House Dust Mite
-Act c,Food
-Act d,Food
-Aed a,Other
-Aln g,Pollen
-Alt a,Mold
-Ama r,Pollen
-Amb a,Pollen
-Amb p,Pollen
-Amb t,Pollen
-Ana c,Food
-Ana o,Food
-Ani s,Other
-Ant o,Pollen
-Api c,Venom
-Api d,Venom
-Api g,Food
-Api m,Venom
-Ara h,Food
-Arc s,Food
-Arg r,Animal
-Art an,Pollen
-Art ar,Pollen
-Art fr,Food
-Art v,Pollen
-Asc l,Other
-Asc s,Other
-Asp f,Mold
-Asp fl,Mold
-Asp n,Mold
-Asp o,Mold
-Asp v,Mold
-Aspa o,Food
-Ber e,Food
-Bet v,Pollen
-Beta v,Food
-Bla g,Cockroach
-Blo t,House Dust Mite
-Bom p,Venom
-Bom t,Venom
-Bomb m,Animal
-Bos d,Food
-Bra j,Food
-Bra n,Pollen
-Bra o,Food
-Bra r,Food
-Can f,Animal
-Can s,Other
-Cand a,Other
-Cand b,Other
-Cap a,Food
-Car b,Pollen
-Car i,Food
-Cari p,Food
-Cas s,Food
-Cat r,Pollen
-Cav p,Animal
-Cha f,Animal
-Cha o,Pollen
-Che a,Pollen
-Chi k,Other
-Chi t,Other
-Cho a,House Dust Mite
-Cit l,Food
-Cit r,Food
-Cit s,Food
-Citr l,Food
-Cla c,Mold
-Cla h,Mold
-Clu h,Food
-Coc n,Food
-Cof a,Food
-Cop c,Mold
-Copt f,House Dust Mite
-Cor a,Food
-Cra c,Food
-Cra g,Food
-Cro p,Food
-Cro s,Pollen
-Cry j,Pollen
-Cte f,Other
-Cuc m,Food
-Cup a,Pollen
-Cup s,Pollen
-Cur l,Mold
-Cyn d,Pollen
-Cyp c,Food
-Dac g,Pollen
-Dau c,Food
-Den n,Other
-Der f,House Dust Mite
-Der m,House Dust Mite
-Der p,House Dust Mite
-Dol a,Venom
-Dol m,Venom
-Epi p,Mold
-Equ a,Food
-Equ c,Animal
-Eri s,Food
-Eur m,House Dust Mite
-Fag e,Food
-Fag s,Pollen
-Fag t,Food
-Fel d,Animal
-Fes p,Pollen
-For t,Other
-Fra a,Food
-Fra e,Pollen
-Fus c,Mold
-Fus p,Mold
-Gad c,Food
-Gad m,Food
-Gal d,Food
-Glo m,Other
-Gly d,House Dust Mite
-Gly m,Food
-Hal l,Food
-Hal m,Food
-Har a,Other
-Hel a,Food
-Hel as,Food
-Hev b,Latex
-Hol l,Pollen
-Hom a,Food
-Hom s,Other
-Hor v,Food
-Hum j,Pollen
-Jug n,Food
-Jug r,Food
-Jun a,Pollen
-Jun o,Pollen
-Jun s,Pollen
-Jun v,Pollen
-Koc s,Pollen
-Lac s,Food
-Lat c,Food
-Len c,Food
-Lep d,House Dust Mite
-Lep s,Animal
-Lep w,Food
-Lig v,Pollen
-Lip b,Other
-Lit c,Pollen
-Lit v,Pollen
-Lol p,Pollen
-Lup a,Food
-Lup an,Food
-Mac r,Food
-Mal d,Food
-Mala f,Mold
-Mala s,Mold
-Man e,Food
-Mel l,Food
-Mer a,Pollen
-Mes a,Animal
-Met e,Food
-Mor n,Food
-Mus a,Food
-Mus m,Animal
-Myr p,Other
-Ole e,Pollen
-Onc k,Food
-Onc m,Food
-Ore m,Food
-Ory c,Animal
-Ory s,Food
-Ost c,Pollen
-Pac c,Other
-Pan b,Food
-Pan s,Food
-Par h,Pollen
-Par j,Pollen
-Par o,Pollen
-Pas n,Pollen
-Pen a,Food
-Pen b,Mold
-Pen c,Mold
-Pen ch,Mold
-Pen cr,Mold
-Pen i,Food
-Pen m,Food
-Pen o,Mold
-Per a,Cockroach
-Pers a,Food
-Pha a,Pollen
-Pha v,Food
-Phl p,Pollen
-Pho d,Pollen
-Phod s,Animal
-Pin k,Food
-Pin p,Food
-Pis s,Food
-Pis v,Food
-Pla a,Pollen
-Pla l,Pollen
-Pla or,Pollen
-Plo i,Other
-Poa p,Pollen
-Pol a,Venom
-Pol d,Venom
-Pol e,Venom
-Pol f,Venom
-Pol g,Venom
-Pol m,Venom
-Poly p,Venom
-Poly s,Venom
-Pon l,Food
-Por p,Food
-Pro j,Pollen
-Pru ar,Food
-Pru av,Food
-Pru d,Food
-Pru du,Food
-Pru m,Food
-Pru p,Food
-Psi c,Mold
-Pun g,Food
-Pyr c,Food
-Que a,Pollen
-Ran e,Food
-Ras k,Food
-Rat n,Animal
-Rhi o,Mold
-Rho m,Other
-Ric c,Food
-Rub i,Food
-Sac g,Food
-Sal k,Pollen
-Sal s,Food
-Sar sa,Food
-Sch c,Mold
-Seb m,Food
-Sec c,Food
-Ses i,Food
-Sin a,Food
-Sol g,Venom
-Sol i,Venom
-Sol r,Venom
-Sol s,Venom
-Sola l,Food
-Sola t,Food
-Sor h,Pollen
-Sta c,Mold
-Sus s,Animal
-Syr v,Pollen
-Tab y,Other
-Tha p,Other
-Thu a,Food
-Tod p,Food
-Tri a,Food
-Tri r,Mold
-Tri t,Mold
-Tri tu,Food
-Tria p,Other
-Trip s,Pollen
-Tyr p,House Dust Mite
-Ves f,Venom
-Ves g,Venom
-Ves m,Venom
-Ves p,Venom
-Ves s,Venom
-Ves v,Venom
-Ves vi,Venom
-Vesp c,Venom
-Vesp m,Venom
-Vesp ma,Venom
-Vig r,Food
-Vit v,Food
-Xip g,Food
-Zea m,Food
-Ziz m,Food
+Prefix,Category,Subcategory,Subsubcategory
+Can f,Animal,Dog,
+Cav p,Animal,Guinea pig,
+Equ c,Animal,Horse,
+Fel d,Animal,Cat,
+Mes a,Animal,Hamster,Golden hamster
+Mus m,Animal,Mouse,
+Ory c,Animal,Rabbit,
+Phod s,Animal,Hamster,Siberian hamster
+Rat n,Animal,Rat,
+Sus s,Animal,Pig,
+Bla g,Cockroach,German cockroach,
+Per a,Cockroach,American cockroach,
+Act c,Food,Fruit,Gold kiwi fruit
+Act d,Food,Fruit,Green kiwi fruit
+Ana c,Food,Fruit,Pineapple
+Ana o,Food,Nut,Cashew
+Api g,Food,Vegetable,Celery
+Ara h,Food,Nut,Peanut
+Arc s,Food,Seafood,Crayfish
+Art fr,Food,Seafood,Brine shrimp
+Aspa o,Food,Vegetable,Asparagus
+Ber e,Food,Nut,Brazil nut
+Beta v,Food,Vegetable,Sugar beet
+Bos d,Food,Milk,Cow
+Bra j,Food,Seed,Indian mustard
+Bra o,Food,Vegetable,Cabbage
+Bra r,Food,Vegetable,Turnip
+Cap a,Food,Vegetable,Chilli pepper
+Car i,Food,Nut,Pecan
+Cari p,Food,Fruit,Papaya
+Cas s,Food,Nut,Chestnut
+Cha f,Food,Seafood,Crab
+Cit l,Food,Fruit,Lemon
+Cit r,Food,Fruit,Tangerine
+Cit s,Food,Fruit,Sweet orange
+Citr l,Food,Fruit,Watermelon
+Clu h,Food,Seafood,Atlantic herring
+Coc n,Food,Fruit,Coconut
+Cof a,Food,Bean,Arabian coffee
+Cor a,Food,Nut,Hazelnut
+Cra c,Food,Seafood,North Sea shrimp
+Cra g,Food,Seafood,Pacific oyster
+Cro p,Food,Seafood,Australian saltwater crocodile
+Cuc m,Food,Fruit,Muskmelon
+Cyp c,Food,Seafood,Common carp
+Dau c,Food,Vegetable,Carrot
+Equ a,Food,Milk,Donkey
+Eri s,Food,Seafood,Crab
+Fag e,Food,Grain,Common buckwheat
+Fag t,Food,Grain,Tartarian buckwheat
+Fra a,Food,Fruit,Strawberry
+Gad c,Food,Seafood,Baltic cod
+Gad m,Food,Seafood,Atlantic cod
+Gal d,Food,Egg,Chicken
+Gly m,Food,Legume,Soybean
+Hal l,Food,Seafood,Jade tiger abaolone
+Hal m,Food,Seafood,Abalone
+Hel a,Food,Seed,Sunflower
+Hel as,Food,Meat,Brown garden snail
+Hom a,Food,Seafood,American lobster
+Hor v,Food,Grain,Barley
+Jug n,Food,Nut,Black walnut
+Jug r,Food,Nut,English walnut
+Lac s,Food,Vegetable,Lettuce
+Lat c,Food,Seafood,Barramundi
+Len c,Food,Legume,Lentil
+Lep w,Food,Seafood,Megrim
+Lit v,Food,Seafood,White shrimp
+Lup a,Food,Seed,White lupine
+Lup an,Food,Seed,Narrowleaf lupin
+Mac r,Food,Seafood,Giant freshwater prawn
+Mal d,Food,Fruit,Apple
+Man e,Food,Vegetable,Cassava
+Mel l,Food,Seafood,King prawn
+Met e,Food,Seafood,Shrimp
+Mor n,Food,Fruit,Mulberry
+Mus a,Food,Fruit,Banana
+Onc k,Food,Seafood,Chum salmon
+Onc m,Food,Seafood,Rainbow trout
+Ore m,Food,Seafood,Mozambique tilapia
+Ory s,Food,Grain,Rice
+Pan b,Food,Seafood,Northern shrimp
+Pan s,Food,Seafood,Spiny lobster
+Pen a,Food,Seafood,Brown shrimp
+Pen i,Food,Seafood,Shrimp
+Pen m,Food,Seafood,Black tiger shrimp
+Pers a,Food,Fruit,Avocado
+Pha v,Food,Bean,Green bean
+Pin k,Food,Nut,Korean pine
+Pin p,Food,Nut,Stone pine
+Pis s,Food,Legume,Pea
+Pis v,Food,Nut,Pistachio
+Pon l,Food,Seafood,Narrow-clawed crayfish
+Por p,Food,Seafood,Blue swimmer crab
+Pru ar,Food,Fruit,Apricot
+Pru av,Food,Fruit,Sweet cherry
+Pru d,Food,Fruit,European plum
+Pru du,Food,Nut,Almond
+Pru m,Food,Fruit,Japanese apricot
+Pru p,Food,Fruit,Peach
+Pun g,Food,Fruit,Pomegranate
+Pyr c,Food,Fruit,Pear
+Ran e,Food,Meat,Frog
+Ras k,Food,Seafood,Indian mackerel
+Ric c,Food,Seed,Castor bean
+Rub i,Food,Fruit,Red raspberry
+Sac g,Food,Seafood,Sydney rock oyster
+Sal s,Food,Seafood,Atlantic salmon
+Sar sa,Food,Seafood,Pacific pilchard
+Seb m,Food,Seafood,Ocean perch
+Sec c,Food,Grain,Rye
+Ses i,Food,Seed,Sesame
+Sin a,Food,Seed,Yellow mustard
+Sola l,Food,Vegetable,Tomato
+Sola t,Food,Vegetable,Potato
+Thu a,Food,Seafood,Yellowfin tuna
+Tod p,Food,Seafood,Japanese flying squid
+Tri a,Food,Grain,Wheat
+Tri tu,Food,Grain,Durum wheat
+Vig r,Food,Legume,Mung bean
+Vit v,Food,Fruit,Grape
+Xip g,Food,Seafood,Swordfish
+Zea m,Food,Grain,Maize
+Ziz m,Food,Fruit,Chinese-date
+Aca s,House Dust Mite,Storage mite,
+Blo t,House Dust Mite,Storage mite,
+Cho a,House Dust Mite,Storage mite,
+Der f,House Dust Mite,D. farinae,
+Der m,House Dust Mite,D. microceras,
+Der p,House Dust Mite,D. pteronyssinus,
+Eur m,House Dust Mite,E. maynei,
+Gly d,House Dust Mite,Storage mite,
+Lep d,House Dust Mite,Storage mite,
+Tyr p,House Dust Mite,Storage mite,
+Alt a,Mold,Alternaria,
+Asp f,Mold,Aspergillus,
+Asp fl,Mold,Aspergillus,
+Asp n,Mold,Aspergillus,
+Asp o,Mold,Aspergillus,
+Asp v,Mold,Aspergillus,
+Cla c,Mold,Cladosporium,
+Cla h,Mold,Cladosporium,
+Cop c,Mold,Coprinus,
+Cur l,Mold,Curvularia,
+Epi p,Mold,Epicoccum,
+Fus c,Mold,Fusarium,
+Fus p,Mold,Fusarium,
+Mala f,Mold,Malassezia,
+Mala s,Mold,Malassezia,
+Pen b,Mold,Penicillium,
+Pen c,Mold,Penicillium,
+Pen ch,Mold,Penicillium,
+Pen cr,Mold,Penicillium,
+Pen o,Mold,Penicillium,
+Psi c,Mold,Psilocybe,
+Rhi o,Mold,Rhizopus,
+Sch c,Mold,Schuzophyllum,
+Sta c,Mold,Stachybotrys,
+Tri r,Mold,Trichophyton,
+Tri t,Mold,Trichophyton,
+Aed a,Other,Insect,Yellow fever mosquito
+Ani s,Other,Insect,Herring worm
+Arg r,Other,Insect,Pigeon tick
+Asc l,Other,Parasite,Common roundworm
+Asc s,Other,Parasite,Pig roundworm
+Bomb m,Other,Insect,Silk moth
+Can s,Other,Cannabis,
+Cand a,Other,Microbe,Yeast
+Cand b,Other,Microbe,Yeast
+Chi k,Other,Insect,Midge
+Chi t,Other,Insect,Midge
+Copt f,Other,Insect,Formosan subterranean termite
+Cte f,Other,Insect,Cat flea
+Den n,Other,Coral,Soft coral
+For t,Other,Insect,Biting midge
+Glo m,Other,Insect,Savannah tsetse fly
+Har a,Other,Insect,Asian ladybeetle
+Hom s,Other,Auto-Immune,Human
+Lep s,Other,Insect,Silverfish
+Lip b,Other,Insect,Booklouse
+Plo i,Other,Insect,Indianmeal moth
+Rho m,Other,Microbe,Yeast
+Tab y,Other,Insect,Horsefly
+Tha p,Other,Insect,Pine processionary moth
+Tria p,Other,Insect,California kissing bug
+Aca f,Pollen,Shrub,Needle bush
+Aln g,Pollen,Tree,Alder
+Ama r,Pollen,Weed,Redroot pigweed
+Amb a,Pollen,Weed,Short ragweed
+Amb p,Pollen,Weed,Western ragweed
+Amb t,Pollen,Grass,Giant ragweed
+Ant o,Pollen,Grass,Sweet vernal grass
+Art an,Pollen,Grass,Sweet Wormwood
+Art ar,Pollen,Grass,Silvery wormwood
+Art v,Pollen,Weed,Mugwort
+Bet v,Pollen,Tree,European white birch
+Bra n,Pollen,Shrub,Rapeseed
+Car b,Pollen,Tree,Hornbeam
+Cat r,Pollen,Shrub,Rosy periwinkle
+Cha o,Pollen,Tree,Japanese cypress
+Che a,Pollen,Weed,Lamb's quarters
+Cro s,Pollen,Grass,Saffron crocus
+Cry j,Pollen,Tree,Japanese cedar
+Cup a,Pollen,Tree,Cypress
+Cup s,Pollen,Tree,Common cypress
+Cyn d,Pollen,Grass,Bermuda grass
+Dac g,Pollen,Grass,Orchard grass
+Fag s,Pollen,Tree,European beech
+Fes p,Pollen,Grass,Meadow fescue
+Fra e,Pollen,Tree,European ash
+Hol l,Pollen,Grass,Velvet grass
+Hum j,Pollen,Grass,Japanese hop
+Jun a,Pollen,Tree,Mountain cedar
+Jun o,Pollen,Shrub,Prickly juniper
+Jun s,Pollen,Tree,Mountain cedar
+Jun v,Pollen,Tree,Eastern red cedar
+Koc s,Pollen,Shrub,Burning bush
+Lig v,Pollen,Shrub,Common privet
+Lit c,Pollen,Tree,Lychee
+Lol p,Pollen,Grass,Rye grass
+Mer a,Pollen,Weed,Annual mercury
+Ole e,Pollen,Tree,Olive
+Ost c,Pollen,Tree,European hop-hornbeam
+Par h,Pollen,Weed,Feverfew
+Par j,Pollen,Weed,Pellitory of the wall
+Par o,Pollen,Weed,Pellitory
+Pas n,Pollen,Grass,Bahia grass
+Pha a,Pollen,Grass,Canary grass
+Phl p,Pollen,Grass,Timothy grass
+Pho d,Pollen,Tree,Date palm
+Pla a,Pollen,Tree,London plane tree
+Pla l,Pollen,Weed,English plantain
+Pla or,Pollen,Tree,Oriental plane tree
+Poa p,Pollen,Grass,Kentucky blue grass
+Pro j,Pollen,Tree,Mesquite
+Que a,Pollen,Tree,White oak
+Sal k,Pollen,Weed,Saltwort
+Sor h,Pollen,Grass,Johnson grass
+Syr v,Pollen,Shrub,Lilac
+Trip s,Pollen,Tree,Obeche
+Api c,Venom,Bee,Asiatic honey bee
+Api d,Venom,Bee,Giant honeybee
+Api m,Venom,Bee,Honey bee
+Bom p,Venom,Bee,Bumble bee
+Bom t,Venom,Bee,Bumble bee
+Dol a,Venom,Hornet,Yellow hornet
+Dol m,Venom,Hornet,White face hornet
+Myr p,Venom,Ant,Australian jumper ant
+Pac c,Venom,Ant,Asian needle ant
+Pol a,Venom,Wasp,Wasp
+Pol d,Venom,Wasp,Mediterranean paper wasp
+Pol e,Venom,Wasp,Wasp
+Pol f,Venom,Wasp,Wasp
+Pol g,Venom,Wasp,Wasp
+Pol m,Venom,Wasp,Wasp
+Poly p,Venom,Wasp,Wasp
+Poly s,Venom,Wasp,Wasp
+Sol g,Venom,Ant,Tropical fire ant
+Sol i,Venom,Ant,Red imported fire ant
+Sol r,Venom,Ant,Black fire ant
+Sol s,Venom,Ant,Brazilian fire ant
+Ves f,Venom,Wasp,Yellow jacket
+Ves g,Venom,Wasp,Yellow jacket
+Ves m,Venom,Wasp,Yellow jacket
+Ves p,Venom,Wasp,Yellow jacket
+Ves s,Venom,Wasp,Yellow jacket
+Ves v,Venom,Wasp,Yellow jacket
+Ves vi,Venom,Wasp,Wasp
+Vesp c,Venom,Hornet,European hornet
+Vesp m,Venom,Hornet,Giant asian hornet
+Vesp ma,Venom,Hornet,Hornet

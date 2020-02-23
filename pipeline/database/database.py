@@ -1,33 +1,12 @@
 # flake8: noqa
-import pandas as pd
+import json
+import multiprocessing as mp
+from multiprocessing import Pool
+import time
 import requests
 from requests.exceptions import ConnectionError
-import json
+import pandas as pd
 from bs4 import BeautifulSoup as bs
-from multiprocessing import Pool
-import multiprocessing as mp
-import time
-
-
-def main():
-    start = time.time()
-    print("Generating database....")
-    data = generate_database(num_allergens=1500)
-    elapsed = round(time.time() - start)
-    print(f"Database Generated in {elapsed} seconds.")
-
-    start = time.time()
-    db_filename = "data.json"
-    print(f"Writing to {db_filename}...")
-    write_database(data, db_filename)
-    elapsed = round(time.time() - start)
-    print(f"Database Written in {elapsed} seconds.")
-
-    start = time.time()
-    print("Uploading to Firestore...")
-    upload_to_firebase(data["allergens"], "allergens")
-    elapsed = round(time.time() - start)
-    print(f"Uploaded to Firestore in {elapsed} seconds.")
 
 
 def generate_database(num_allergens):
@@ -37,6 +16,7 @@ def generate_database(num_allergens):
     pool_outputs = pool.map(parse_allergen, queue)
     # filter out unmapped a_ids
     data = {"allergens": [x for x in pool_outputs if x is not None]}
+    data["categories"] = build_category_tree("./database/categories.csv")
     return data
 
 
@@ -45,34 +25,15 @@ def write_database(data, db_filename):
         json.dump(data, json_file)
 
 
-def upload_to_firebase(dataset, collection_name):
-    from pipeline.database.firebase import firestore
-
-    store = firestore.client()
-    for d in dataset:
-        store.collection(collection_name).document(d["name"]).set(d)
-        print(f'{d["name"]} uploaded')
-    version_number = store.collection(collection_name).document("version").get()
-    version_number = version_number.to_dict()["value"] + 1
-    store.collection(collection_name).document("version").set({"value": version_number})
-    print(f"Version {version_number}")
-
-
 def parse_allergen(a_id):
     url = f"http://www.allergen.org/viewallergen.php?aid={a_id}"
     entry = parse_allergen_page(url)
     if entry is not None:
         metadata = {
-            "pdb_id": get_metadata_from_csv(
-                entry["name"], "./pipeline/database/pdbs.csv"
-            ),
-            "sold": get_metadata_from_csv(
-                entry["name"], "./pipeline/database/sold.csv"
-            ),
-            "category": get_metadata_from_csv(
-                entry["name"], "./pipeline/database/categories.csv"
-            ),
+            "pdb_id": get_metadata_from_csv(entry["name"], "./database/pdbs.csv"),
+            "sold": get_metadata_from_csv(entry["name"], "./database/sold.csv"),
         }
+        metadata.update(parse_category(entry["name"], "./database/categories.csv"))
         entry.update(metadata)
         print(f'a_id: {a_id}, name: {entry["name"]} completed')
     else:
@@ -156,11 +117,55 @@ def get_metadata_from_csv(allergen_name, filename):
     prefix = " ".join((allergen_name.split()[:2]))
     if allergen_name in d:
         return d[allergen_name]
-    elif prefix in d:  # Covers prefix style metadata a la categories.csv
+    if prefix in d:  # Covers prefix style metadata a la categories.csv
         return d[prefix]
-    else:
-        return None
+    return None
 
 
-if __name__ == "__main__":
-    main()
+def parse_category(allergen_name, filename):
+    df = pd.read_csv(filename, header=0, index_col=None, squeeze=True)
+    df = df.replace({pd.np.nan: None})
+    prefix = " ".join((allergen_name.split()[:2]))
+    x = df.loc[df["Prefix"] == prefix]
+    try:
+        category = x["Category"].values[0]
+    except IndexError:
+        print("No category for", allergen_name)
+        category = None
+    try:
+        sub_category = x["Subcategory"].values[0]
+    except IndexError:
+        print("No subcategory for", allergen_name)
+        sub_category = None
+    try:
+        sub_sub_category = x["Subsubcategory"].values[0]
+    except IndexError:
+        print("No subsubcategory for", allergen_name)
+        sub_sub_category = None
+
+    return {
+        "category": category,
+        "subcategory": sub_category,
+        "subsubcategory": sub_sub_category,
+    }
+
+
+def build_category_tree(filename):
+    with open(filename) as f:
+        x = f.readlines()
+
+    root = {}
+    for y in x:
+        fields = [f.strip() for f in y.split(",") if f.strip() is not ""]
+        fields = fields[1:] + fields[:1]
+        fields.reverse()
+        curr_level = root
+        while fields:
+            f = fields.pop()
+            if f not in curr_level:  # Have to insert a node
+                if not fields:  # child node
+                    curr_level[f] = True
+                else:
+                    curr_level[f] = {}
+            curr_level = curr_level[f]  # Go down a level
+    return root

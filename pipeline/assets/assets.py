@@ -1,7 +1,6 @@
 # flake8: noqa
 from multiprocessing import Pool
 import time
-import pdb as debugger
 import os
 import subprocess
 import re
