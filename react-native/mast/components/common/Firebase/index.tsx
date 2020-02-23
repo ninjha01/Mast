@@ -38,11 +38,15 @@ class Firebase {
   getAllergenCollection(query?: string, query_type?: string) {
     query = typeof query === "undefined" ? "" : query;
     query_type = typeof query_type === "undefined" ? "" : query_type;
-    if (query_type === "category") {
+    if (
+      query_type === "category" ||
+      query_type == "subcategory" ||
+      query_type == "subsubcategory"
+    ) {
       return firebase
         .firestore()
         .collection("allergens")
-        .where("category", "==", query);
+        .where(query_type, "==", query);
     }
     if (query_type === "name") {
       const start = query;

@@ -10,7 +10,9 @@ import {
   ImageBackground,
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  Modal,
+  Alert
 } from "react-native";
 import { SearchBar } from "react-native-elements";
 import Media from "../../assets/";
@@ -31,13 +33,19 @@ export default class HomePage extends Component {
       // Category is defined when searching for a category
       category: "",
       query_type: "",
-      firebase: new Firebase()
+      firebase: new Firebase(),
+      modalVisible: false
     };
     this.updateSearch = this.updateSearch.bind(this);
     this.submitQuery = this.submitQuery.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.foundAllergen = this.foundAllergen.bind(this);
     this.buttonPressed = this.buttonPressed.bind(this);
+    this.showModal = this.showModal.bind(this);
+  }
+
+  showModal(tag: String, query_type: String) {
+    this.setState({ modalVisible: true });
   }
 
   updateSearch(text: string) {
@@ -67,7 +75,7 @@ export default class HomePage extends Component {
     this.setState(
       { query: label, category: tag, query_type: "category" },
       () => {
-        this.submitQuery();
+        this.showModal(tag, "category");
       }
     );
   }
@@ -106,6 +114,20 @@ export default class HomePage extends Component {
             placeholder="Search Allergens..."
             value={this.state.query}
           />
+
+          <Modal
+            animationType="slide"
+            transparent={false}
+            visible={this.state.modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+            }}
+          >
+            <View style={styles.container}>
+              <Text style={styles.title}>Hello World!</Text>
+            </View>
+          </Modal>
+
           <View style={styles.container}>
             <Image style={styles.home_icon} source={Media.common.logo} />
           </View>
