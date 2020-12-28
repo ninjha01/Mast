@@ -1,0 +1,20 @@
+* Dandruff
+  Install
+  #+begin_src sh
+    npm install
+  #+end_src
+
+  To run
+  #+begin_src sh
+    npm run start
+  #+end_src
+
+  To build
+  #+begin_src sh
+    npm run build
+  #+end_src
+
+  To serve
+  #+begin_src sh
+    npm run deploy
+  #+end_src
